@@ -14,8 +14,7 @@ HIDDEN_SIZES = [8, 768, 769, 770, 771, 5120, 5124, 5125, 5126, 8192,
 ADD_RESIDUAL = [False, True]
 SEEDS = [0]
 XPU_DEVICES = [
-    # f"xpu:{i}" for i in range(1 if torch.xpu.device_count() == 1 else 2)
-    f"xpu:{0}"
+    f"xpu:{i}" for i in range(1 if torch.xpu.device_count() == 1 else 2)
 ]
 
 
@@ -36,8 +35,9 @@ def test_rms_norm(
     device: str,
     strided_input: bool,
 ) -> None:
-    # current_platform.seed_everything(seed)
-    torch.set_default_device(device)
+    # Note: torch.set_default_device("xpu:1") not works.
+    torch.set_default_device("xpu")
+    torch.xpu.set_device(device)
     layer = RMSNorm(hidden_size).to(dtype=dtype)
     layer.weight.data.normal_(mean=1.0, std=0.1)
     scale = 1 / (2 * hidden_size)

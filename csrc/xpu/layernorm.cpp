@@ -53,7 +53,6 @@ void call_rms_norm_kernel(torch::Tensor& out, torch::Tensor& input,
   sycl::range<3> block(1, 1, std::min(hidden_size, 1024));
   auto& queue = vllm::xpu::vllmGetQueue();
   queue.submit([&](sycl::handler& cgh) {
-    // sycl::local_accessor<float, 1> shared_vals( sycl::range<1>(32), cgh);
     sycl::local_accessor<float, 1> s_variance(sycl::range<1>(1), cgh);
     cgh.parallel_for(
         sycl::nd_range<3>(grid * block, block),
