@@ -40,8 +40,8 @@ void rms_norm_kernel(scalar_t* __restrict__ out,          // [..., hidden_size]
 }
 
 template <typename scalar_t>
-void call_rms_norm_kernel(torch::Tensor& out, const torch::Tensor& input,
-                          const torch::Tensor& weight, float epsilon) {
+void call_rms_norm_kernel(torch::Tensor& out, torch::Tensor& input,
+                          torch::Tensor& weight, float epsilon) {
   using sycl_t = vllm::xpu::SyclTypeTrait<scalar_t>::Type;
   int hidden_size = input.size(-1);
   int num_tokens = input.numel() / hidden_size;
@@ -132,8 +132,8 @@ void call_fused_add_rms_norm_kernel(torch::Tensor& input,
 
 }  // namespace vllm
 
-void rms_norm(torch::Tensor& out, const torch::Tensor& input,
-              const torch::Tensor& weight, double epsilon) {
+void rms_norm(torch::Tensor& out, torch::Tensor& input, torch::Tensor& weight,
+              double epsilon) {
   VLLM_DISPATCH_FLOATING_TYPES(
       input.scalar_type(), "call_rms_norm_kernel", [&] {
         vllm::call_rms_norm_kernel<scalar_t>(out, input, weight, epsilon);
