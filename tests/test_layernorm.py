@@ -4,6 +4,7 @@
 import pytest
 import torch
 from ops import RMSNorm
+from utils import opcheck
 
 DTYPES = [torch.half, torch.bfloat16]
 NUM_TOKENS = [7, 83, 4096]  # Arbitrary values for testing
@@ -60,10 +61,9 @@ def test_rms_norm(
     else:
         torch.testing.assert_close(out, ref_out, atol=1e-2, rtol=1e-2)
 
-    # if residual is not None:
-    #     opcheck(
-    #     torch.ops._C.fused_add_rms_norm,(x, residual, layer.weight.data,
-    #       layer.variance_epsilon))
-    # else:
-    #     opcheck(torch.ops._C.rms_norm, (out, x, layer.weight.data,
-    #       layer.variance_epsilon))
+    if residual is not None:
+        opcheck(torch.ops._C.fused_add_rms_norm,
+                (x, residual, layer.weight.data, layer.variance_epsilon))
+    else:
+        opcheck(torch.ops._C.rms_norm,
+                (out, x, layer.weight.data, layer.variance_epsilon))
