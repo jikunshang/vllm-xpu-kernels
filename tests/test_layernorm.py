@@ -3,8 +3,9 @@
 
 import pytest
 import torch
-from ops import RMSNorm
-from utils import opcheck
+
+from tests.ops import RMSNorm
+from tests.utils import opcheck
 
 DTYPES = [torch.half, torch.bfloat16]
 NUM_TOKENS = [7, 83, 4096]  # Arbitrary values for testing
