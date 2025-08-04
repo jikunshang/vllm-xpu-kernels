@@ -4,6 +4,8 @@
 import pytest
 import torch
 
+import vllm_xpu_kernels._C  # noqa F401
+
 DTYPES = [torch.half, torch.bfloat16]
 
 
