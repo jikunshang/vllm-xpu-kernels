@@ -1,0 +1,511 @@
+---
+MainSourceFile:  '/root/kunshang/vllm/csrc/sycl_result/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+Replacements:
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          2245
+    Length:          0
+    ReplacementText: "#define DPCT_PROFILING_ENABLED\n#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          2354
+    Length:          0
+    ReplacementText: "\n#include <cmath>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          4619
+    Length:          19
+    ReplacementText: 'std::min(16, max_splits)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          4817
+    Length:          30
+    ReplacementText: 'std::min(max_splits, sms_per_batch)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6087
+    Length:          11
+    ReplacementText: 'dpct::err0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6355
+    Length:          0
+    ReplacementText: "      /*\n      DPCT1000:375: Error handling if-stmt was detected but could not be rewritten.\n      */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6365
+    Length:          11
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6390
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1010:376: SYCL uses exceptions to report errors and does not use the error codes. The cudaGetLastError function call was replaced with 0. You need to rewrite this code.\n        */\n        /*\n        DPCT1001:374: The statement could not be removed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6407
+    Length:          18
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6535
+    Length:          0
+    ReplacementText: "          /*\n          DPCT1009:377: SYCL reports errors using exceptions and does not use error codes. Please replace the \"get_error_string_dummy(...)\" with a real error-handling function.\n          */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6548
+    Length:          26
+    ReplacementText: 'dpct::get_error_string_dummy(result)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6834
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1000:373: Error handling if-stmt was detected but could not be rewritten.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6842
+    Length:          11
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6867
+    Length:          0
+    ReplacementText: "      /*\n      DPCT1010:378: SYCL uses exceptions to report errors and does not use the error codes. The cudaGetLastError function call was replaced with 0. You need to rewrite this code.\n      */\n      /*\n      DPCT1001:372: The statement could not be removed.\n      */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          6882
+    Length:          18
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          7031
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1009:379: SYCL reports errors using exceptions and does not use error codes. Please replace the \"get_error_string_dummy(...)\" with a real error-handling function.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          7042
+    Length:          26
+    ReplacementText: 'dpct::get_error_string_dummy(result)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          7317
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          7339
+    Length:          7
+    ReplacementText: '&dpct::get_in_order_queue()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          8662
+    Length:          11
+    ReplacementText: 'dpct::err0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          8815
+    Length:          0
+    ReplacementText: "      /*\n      DPCT1000:381: Error handling if-stmt was detected but could not be rewritten.\n      */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          8825
+    Length:          11
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          8850
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1010:382: SYCL uses exceptions to report errors and does not use the error codes. The cudaGetLastError function call was replaced with 0. You need to rewrite this code.\n        */\n        /*\n        DPCT1001:380: The statement could not be removed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          8867
+    Length:          18
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          8913
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1009:383: SYCL reports errors using exceptions and does not use error codes. Please replace the \"get_error_string_dummy(...)\" with a real error-handling function.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          8987
+    Length:          26
+    ReplacementText: 'dpct::get_error_string_dummy(result)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          10316
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          10338
+    Length:          7
+    ReplacementText: '&dpct::get_in_order_queue()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          10391
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          10441
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          10751
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11324
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1010:384: SYCL uses exceptions to report errors and does not use the error codes. The cudaGetLastError function call was replaced with 0. You need to rewrite this code.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11328
+    Length:          11
+    ReplacementText: 'dpct::err0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11349
+    Length:          18
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11674
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11735
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11903
+    Length:          0
+    ReplacementText: "      /*\n      DPCT1010:385: SYCL uses exceptions to report errors and does not use the error codes. The cudaGetLastError function call was replaced with 0. You need to rewrite this code.\n      */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11909
+    Length:          11
+    ReplacementText: 'dpct::err0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11930
+    Length:          18
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          11960
+    Length:          11
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          12502
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          12524
+    Length:          7
+    ReplacementText: '&dpct::get_in_order_queue()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          12867
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          12889
+    Length:          7
+    ReplacementText: '&dpct::get_in_order_queue()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          13065
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          13087
+    Length:          7
+    ReplacementText: '&dpct::get_in_order_queue()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          13262
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/mla/cutlass_sm100_mla/device/sm100_mla.hpp'
+    Offset:          13284
+    Length:          7
+    ReplacementText: '&dpct::get_in_order_queue()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  ''
+    Digest:          ''
+    HasCUDASyntax:   false
+DpctVersion:     2025.1.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           ''
+    ValueVec:
+      - '/root/kunshang/vllm/csrc'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'true'
+    Specified:       true
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UseSYCLCompat:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

@@ -1,0 +1,160 @@
+---
+MainSourceFile:  '/root/kunshang/vllm/csrc/result/cuda_compat.h'
+Replacements:
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          189
+    Length:          0
+    ReplacementText: "  /*\n  DPCT1098:65: The '*' expression is used instead of the __ldg call. These two expressions do not provide the exact same functionality. Check the generated code for potential precision and/or performance issues.\n  */\n  /*\n  DPCT1064:66: Migrated __ldg call is used in a macro/template definition and may not be valid for all macro/template uses. Adjust the code.\n  */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          213
+    Length:          10
+    ReplacementText: '*(sin_ptr + x_index / 2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          337
+    Length:          45
+    ReplacementText: 'dpct::permute_sub_group_by_xor(item_ct1.get_sub_group(), var, lane_mask)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          447
+    Length:          52
+    ReplacementText: 'dpct::permute_sub_group_by_xor(item_ct1.get_sub_group(), var, lane_mask, width)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          701
+    Length:          0
+    ReplacementText: "  /*\n  DPCT1121:6: Make sure that the \"sum\" which is used in the SYCL group function/algorithm is initialized.\n  */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          741
+    Length:          40
+    ReplacementText: 'dpct::select_from_sub_group(item_ct1.get_sub_group(), var, src_lane)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          1083
+    Length:          0
+    ReplacementText: "  /*\n  DPCT1027:27: The call to cudaFuncSetAttribute was replaced with 0 because SYCL currently does not support corresponding setting.\n  */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/cuda_compat.h'
+    Offset:          1163
+    Length:          76
+    ReplacementText: '0'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  ''
+    Digest:          ''
+    HasCUDASyntax:   false
+DpctVersion:     2025.1.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           ''
+    ValueVec:
+      - '/root/kunshang/vllm/csrc'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UseSYCLCompat:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

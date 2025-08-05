@@ -1,0 +1,997 @@
+---
+MainSourceFile:  '/root/kunshang/vllm/csrc/sycl_result/moe/moe_wna16_utils.h'
+Replacements:
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1
+    Length:          23
+    ReplacementText: "#define DPCT_PROFILING_ENABLED\n#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          24
+    Length:          23
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          128
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          164
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          190
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          207
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          247
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          268
+    Length:          15
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          299
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          310
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          338
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          359
+    Length:          15
+    ReplacementText: 'sycl::half2(x)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          390
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          401
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          430
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          445
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          467
+    Length:          22
+    ReplacementText: 'sycl::half2(x1, x2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          505
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          514
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          525
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          575
+    Length:          15
+    ReplacementText: 'sycl::vec<float, 1>(x).convert<sycl::half, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          606
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          615
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          626
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          674
+    Length:          16
+    ReplacementText: 'sycl::vec<int, 1>(x).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          706
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          715
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          726
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          758
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          780
+    Length:          17
+    ReplacementText: 'x.convert<float, sycl::rounding_mode::automatic>()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          813
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          822
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          833
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          864
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          887
+    Length:          20
+    ReplacementText: 'x.convert<sycl::half, sycl::rounding_mode::rte>()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          946
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          989
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1022
+    Length:          12
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1049
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1067
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1097
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1137
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1165
+    Length:          19
+    ReplacementText: 'static_cast<float>(x)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1200
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1211
+    Length:          12
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1246
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1274
+    Length:          23
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(x, x)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1313
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1324
+    Length:          12
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1360
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1432
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1461
+    Length:          26
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(x1, x2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1503
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1512
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1523
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1580
+    Length:          19
+    ReplacementText: 'sycl::ext::oneapi::bfloat16(x)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1615
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1624
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1635
+    Length:          11
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1679
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1007:291: Migration of __int2bfloat16_rn is not supported.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1726
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1735
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1746
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1778
+    Length:          12
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1807
+    Length:          21
+    ReplacementText: 'sycl::float2(x[0], x[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1844
+    Length:          9
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1853
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1864
+    Length:          12
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1902
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1925
+    Length:          24
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(x[0], x[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          1985
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          2048
+    Length:          123
+    ReplacementText: 'res = dpct::ternary_logic_op(a, b, c, lut);'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          2171
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          2226
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          2290
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:20: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          2469
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          2539
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          2587
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          3006
+    Length:          98
+    ReplacementText: '*reinterpret_cast<sycl::half2*>(&lo0) - *reinterpret_cast<const sycl::half2*>(&SUB)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          3117
+    Length:          156
+    ReplacementText: 'sycl::fma(*reinterpret_cast<sycl::half2*>(&hi0), *reinterpret_cast<const sycl::half2*>(&MUL), *reinterpret_cast<const sycl::half2*>(&ADD))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          3286
+    Length:          98
+    ReplacementText: '*reinterpret_cast<sycl::half2*>(&lo1) - *reinterpret_cast<const sycl::half2*>(&SUB)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          3397
+    Length:          156
+    ReplacementText: 'sycl::fma(*reinterpret_cast<sycl::half2*>(&hi1), *reinterpret_cast<const sycl::half2*>(&MUL), *reinterpret_cast<const sycl::half2*>(&ADD))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          3570
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          3618
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          4006
+    Length:          115
+    ReplacementText: '*reinterpret_cast<sycl::half2*>(&lo) - *reinterpret_cast<const sycl::half2*>(&I8s_TO_F16s_MAGIC_NUM)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          4134
+    Length:          115
+    ReplacementText: '*reinterpret_cast<sycl::half2*>(&hi) - *reinterpret_cast<const sycl::half2*>(&I8s_TO_F16s_MAGIC_NUM)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          4266
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          4284
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          4317
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          4372
+    Length:          12
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          4836
+    Length:          177
+    ReplacementText: '*reinterpret_cast<sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&lo0) * *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&MUL) + *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&ADD)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          5026
+    Length:          177
+    ReplacementText: '*reinterpret_cast<sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&hi0) * *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&MUL) + *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&ADD)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          5216
+    Length:          177
+    ReplacementText: '*reinterpret_cast<sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&lo1) * *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&MUL) + *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&ADD)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          5406
+    Length:          177
+    ReplacementText: '*reinterpret_cast<sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&hi1) * *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&MUL) + *reinterpret_cast<const sycl::marray<sycl::ext::oneapi::bfloat16, 2>*>(&ADD)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          5600
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          5655
+    Length:          12
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          5888
+    Length:          33
+    ReplacementText: 'dpct::byte_level_permute(q, fp32_base, 0x7650)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          5956
+    Length:          33
+    ReplacementText: 'dpct::byte_level_permute(q, fp32_base, 0x7652)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          6024
+    Length:          33
+    ReplacementText: 'dpct::byte_level_permute(q, fp32_base, 0x7651)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          6092
+    Length:          33
+    ReplacementText: 'dpct::byte_level_permute(q, fp32_base, 0x7653)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          6368
+    Length:          114
+    ReplacementText: 'dpct::byte_level_permute(fp32_intermediates_casted[0], fp32_intermediates_casted[1], 0x7632)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/moe/moe_wna16_utils.h'
+    Offset:          6507
+    Length:          114
+    ReplacementText: 'dpct::byte_level_permute(fp32_intermediates_casted[2], fp32_intermediates_casted[3], 0x7632)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  ''
+    Digest:          ''
+    HasCUDASyntax:   false
+DpctVersion:     2025.1.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           ''
+    ValueVec:
+      - '/root/kunshang/vllm/csrc'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'true'
+    Specified:       true
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UseSYCLCompat:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

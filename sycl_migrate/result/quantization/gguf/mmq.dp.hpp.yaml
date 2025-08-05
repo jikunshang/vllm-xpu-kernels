@@ -1,0 +1,1438 @@
+---
+MainSourceFile:  '/root/kunshang/vllm/csrc/result/quantization/gguf/mmq.dp.hpp'
+Replacements:
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          329
+    Length:          0
+    ReplacementText: "/*\nDPCT1110:19: The total declared local variable size in device function mul_mat_q exceeds 128 bytes and may cause high register pressure. Consult with your hardware vendor to find the total register size available and adjust the code, or use smaller sub-group size to avoid high register pressure.\n*/\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          336
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          347
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          571
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          897
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          980
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          1073
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          1242
+    Length:          52
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          1299
+    Length:          58
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          1613
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          1645
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          1836
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          1999
+    Length:          41
+    ReplacementText: 'dpct::min((unsigned int)(col_y_0 + item_ct1.get_local_id(1) + i), ncols_y-1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2222
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2352
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2515
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2537
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2617
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2693
+    Length:          29
+    ReplacementText: 'sycl::min(col_y_0 + ids, ncols_y-1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2847
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          2969
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          3227
+    Length:          21
+    ReplacementText: '(*dsi_src)[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          3283
+    Length:          0
+    ReplacementText: "            /*\n            DPCT1118:20: SYCL group functions and algorithms must be encountered in converged control flow. You may need to adjust the code.\n            */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          3295
+    Length:          15
+    ReplacementText: "/*\n            DPCT1065:84: Consider replacing sycl::nd_item::barrier() with sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better performance if there is no access to global memory.\n            */\n            item_ct1.barrier()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          3825
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          3842
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          3917
+    Length:          0
+    ReplacementText: "            /*\n            DPCT1118:21: SYCL group functions and algorithms must be encountered in converged control flow. You may need to adjust the code.\n            */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          3929
+    Length:          15
+    ReplacementText: "/*\n            DPCT1065:85: Consider replacing sycl::nd_item::barrier() with sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better performance if there is no access to global memory.\n            */\n            item_ct1.barrier()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          4069
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          4267
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          4690
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          4990
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          5381
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          5611
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          5854
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          5910
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6026
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:22: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6034
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q4_0<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6180
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6233
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:23: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6241
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q4_0<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6387
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6622
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          6922
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          7313
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          7543
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          7786
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          7842
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          7958
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:24: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          7966
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q4_1<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          8112
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          8165
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:25: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          8173
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q4_1<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          8319
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          8554
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          8854
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          9246
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          9476
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          9737
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          9793
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          9909
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:26: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          9917
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q5_0<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          10063
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          10116
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:27: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          10124
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q5_0<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          10270
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          10505
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          10805
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          11196
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          11426
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          11686
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          11742
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          11858
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:28: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          11866
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q5_1<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          12012
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          12065
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:29: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          12073
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q5_1<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          12219
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          12454
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          12754
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          13146
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          13376
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          13636
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          13692
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          13808
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:30: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          13816
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q8_0<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          13962
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          14015
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:31: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          14023
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q8_0<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          14169
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          14404
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          14704
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15095
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15325
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15585
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15641
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15757
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:32: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15765
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q2_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15911
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15964
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:33: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          15972
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q2_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          16118
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          16353
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          16653
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17045
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17275
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17536
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17592
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17708
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:34: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17716
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q3_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17862
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17915
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:35: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          17923
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q3_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          18069
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          18304
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          18604
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          18994
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19224
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19484
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19540
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19656
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:36: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19664
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q4_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19810
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19863
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:37: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          19871
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q4_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          20017
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          20252
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          20552
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          20942
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21172
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21433
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21489
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21605
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:38: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21613
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q5_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21759
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21812
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:39: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21820
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q5_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          21966
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          22201
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          22501
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1, int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          22892
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23122
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23382
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23438
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23554
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:40: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23562
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q6_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23708
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23761
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:41: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23769
+    Length:          146
+    ReplacementText: "{\n          dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n          stream->submit(\n            [&](sycl::handler &cgh) {\n              sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n              sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF/QI8_1), cgh);\n\n              cgh.parallel_for(\n                sycl::nd_range<3>(block_nums * block_dims, block_dims), \n                [=](sycl::nd_item<3> item_ct1) {\n                  mul_mat_q6_K<scalar_t, need_check>(vx, vy, dst, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n                });\n            });\n        }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/mmq.cuh'
+    Offset:          23915
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  ''
+    Digest:          ''
+    HasCUDASyntax:   false
+DpctVersion:     2025.1.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           ''
+    ValueVec:
+      - '/root/kunshang/vllm/csrc'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UseSYCLCompat:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

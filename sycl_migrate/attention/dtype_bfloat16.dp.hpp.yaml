@@ -1,0 +1,2518 @@
+---
+MainSourceFile:  '/root/kunshang/vllm/csrc/sycl_result/attention/dtype_bfloat16.dp.hpp'
+Replacements:
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1034
+    Length:          32
+    ReplacementText: "#define DPCT_PROFILING_ENABLED\n#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n#include \"attention_generic.dp.hpp\""
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1067
+    Length:          28
+    ReplacementText: '#include "dtype_float32.dp.hpp"'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1116
+    Length:          23
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1141
+    Length:          23
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1413
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1433
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1475
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1495
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1515
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1535
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1614
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1649
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1690
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1725
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1767
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1838
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          1970
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2040
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2073
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2269
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2280
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2306
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2340
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2358
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2410
+    Length:          23
+    ReplacementText: 'sycl::float2(val[0], val[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2525
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2536
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2568
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2601
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2619
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2671
+    Length:          25
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(val, val)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2808
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2819
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2837
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2854
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2885
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          2903
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3111
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3122
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3141
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3159
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3191
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3209
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3261
+    Length:          13
+    ReplacementText: 'a + b'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3366
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3498
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3676
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3687
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3698
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3716
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3731
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3792
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          3928
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4152
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4163
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4181
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4198
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4229
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4247
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4299
+    Length:          12
+    ReplacementText: 'a * b'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4415
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4426
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4445
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4463
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4495
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4513
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4565
+    Length:          13
+    ReplacementText: 'a * b'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4682
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4693
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4712
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4729
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4762
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4778
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4794
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4851
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4927
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4943
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4959
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          4998
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5014
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5030
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5091
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5115
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5148
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5208
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5224
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5240
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5277
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5293
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5309
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5368
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5444
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5460
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5476
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5515
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5531
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5547
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5586
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5602
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5618
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5657
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5673
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5689
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5750
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5774
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5807
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5867
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5883
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5899
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5936
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5952
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          5968
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6005
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6021
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6037
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6074
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6090
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6106
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6165
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6186
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6203
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6235
+    Length:          19
+    ReplacementText: 'static_cast<float>(a)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6269
+    Length:          19
+    ReplacementText: 'static_cast<float>(b)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6330
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6341
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6352
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6370
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6392
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6423
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6465
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6473
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6481
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6520
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6531
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6542
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6559
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6592
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6600
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6616
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6673
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6749
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6757
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6773
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6813
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6821
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6837
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6899
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6922
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          6955
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7016
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7024
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7040
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7078
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7086
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7102
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7162
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7238
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7246
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7262
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7302
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7310
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7326
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7366
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7374
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7390
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7430
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7438
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7454
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7516
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7539
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7572
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7633
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7641
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7657
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7695
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7703
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7719
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7757
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7765
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7781
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7819
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7827
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7843
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7921
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7932
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7951
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          7969
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8024
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8056
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8074
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8126
+    Length:          16
+    ReplacementText: 'a * b + c'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8234
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8245
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8264
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8281
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8336
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8368
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8386
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8438
+    Length:          28
+    ReplacementText: 'bf162bf162(a) * b + c'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8558
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8712
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8736
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8781
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          8903
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9113
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9137
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9182
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9356
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9377
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9394
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9432
+    Length:          19
+    ReplacementText: 'static_cast<float>(a)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9454
+    Length:          19
+    ReplacementText: 'static_cast<float>(b)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9490
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9501
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9512
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9530
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9548
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9563
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9594
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9659
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9670
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9681
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9698
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9716
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9775
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9933
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          9956
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10001
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10128
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10346
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10369
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10414
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10624
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10645
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10673
+    Length:          19
+    ReplacementText: 'static_cast<float>(v)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10716
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10737
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10759
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10797
+    Length:          4
+    ReplacementText: 'vf.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10804
+    Length:          4
+    ReplacementText: 'vf.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10832
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          10919
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11045
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11072
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11113
+    Length:          21
+    ReplacementText: 'sycl::ext::oneapi::bfloat16(src)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11146
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11173
+    Length:          14
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11194
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11220
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11238
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11289
+    Length:          26
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(src[0], src[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11334
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11403
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11421
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11474
+    Length:          28
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(src.x[0], src.x[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11514
+    Length:          28
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(src.y[0], src.y[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11561
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11630
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11648
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11701
+    Length:          28
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(src.x[0], src.x[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11741
+    Length:          28
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(src.y[0], src.y[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11781
+    Length:          28
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(src.z[0], src.z[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11821
+    Length:          28
+    ReplacementText: 'sycl::marray<sycl::ext::oneapi::bfloat16, 2>(src.w[0], src.w[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11897
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11923
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          11951
+    Length:          19
+    ReplacementText: 'static_cast<float>(u)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          12006
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          12027
+    Length:          13
+    ReplacementText: 'sycl::ext::oneapi::bfloat16'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          12061
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          12079
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/attention/dtype_bfloat16.cuh'
+    Offset:          12177
+    Length:          0
+    ReplacementText: "  /*\n  DPCT1007:253: Migration of __ushort_as_bfloat16 is not supported.\n  */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  ''
+    Digest:          ''
+    HasCUDASyntax:   false
+DpctVersion:     2025.1.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           ''
+    ValueVec:
+      - '/root/kunshang/vllm/csrc'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'true'
+    Specified:       true
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UseSYCLCompat:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

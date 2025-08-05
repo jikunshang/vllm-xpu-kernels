@@ -1,0 +1,1969 @@
+---
+MainSourceFile:  '/root/kunshang/vllm/csrc/result/quantization/gguf/dequantize.dp.hpp'
+Replacements:
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          126
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          137
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          358
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          364
+    Length:          24
+    ReplacementText: 'sycl::vec<int, 1>(vui & 0xF).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          394
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          400
+    Length:          23
+    ReplacementText: 'sycl::vec<int, 1>(vui >> 4).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          434
+    Length:          41
+    ReplacementText: 'v - sycl::float2(8.0f, 8.0f).convert<sycl::half, sycl::rounding_mode::rte>()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          485
+    Length:          18
+    ReplacementText: 'v * {d, d}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          515
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          526
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          697
+    Length:          20
+    ReplacementText: 'x[ib].dm[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          740
+    Length:          21
+    ReplacementText: 'x[ib].dm[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          804
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          810
+    Length:          24
+    ReplacementText: 'sycl::vec<int, 1>(vui & 0xF).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          840
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          846
+    Length:          23
+    ReplacementText: 'sycl::vec<int, 1>(vui >> 4).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          880
+    Length:          18
+    ReplacementText: 'v * {d, d}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          908
+    Length:          18
+    ReplacementText: 'v + {m, m}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          938
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          949
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1302
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1308
+    Length:          43
+    ReplacementText: 'sycl::vec<int, 1>((x[ib].qs[iqs] & 0xf) | xh_0).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1357
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1363
+    Length:          43
+    ReplacementText: 'sycl::vec<int, 1>((x[ib].qs[iqs] >>  4) | xh_1).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1417
+    Length:          43
+    ReplacementText: 'v - sycl::float2(16.0f, 16.0f).convert<sycl::half, sycl::rounding_mode::rte>()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1470
+    Length:          18
+    ReplacementText: 'v * {d, d}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1500
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1511
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1682
+    Length:          20
+    ReplacementText: 'x[ib].dm[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1725
+    Length:          21
+    ReplacementText: 'x[ib].dm[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1921
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1927
+    Length:          43
+    ReplacementText: 'sycl::vec<int, 1>((x[ib].qs[iqs] & 0xf) | xh_0).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1976
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          1982
+    Length:          43
+    ReplacementText: 'sycl::vec<int, 1>((x[ib].qs[iqs] >>  4) | xh_1).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2036
+    Length:          18
+    ReplacementText: 'v * {d, d}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2064
+    Length:          18
+    ReplacementText: 'v + {m, m}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2094
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2105
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2290
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2296
+    Length:          32
+    ReplacementText: 'sycl::vec<int, 1>(x[ib].qs[iqs + 0]).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2334
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2340
+    Length:          32
+    ReplacementText: 'sycl::vec<int, 1>(x[ib].qs[iqs + 1]).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2383
+    Length:          18
+    ReplacementText: 'v * {d, d}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2494
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2592
+    Length:          0
+    ReplacementText: ",\n                             const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2617
+    Length:          10
+    ReplacementText: 'item_ct1.get_local_range(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2628
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          2641
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3012
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3074
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3115
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3206
+    Length:          0
+    ReplacementText: ",\n                                  const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3232
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3318
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3507
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3519
+    Length:          19
+    ReplacementText: 'x[i].dm[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3544
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3556
+    Length:          20
+    ReplacementText: 'x[i].dm[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3617
+    Length:          133
+    ReplacementText: 'dall * sycl::vec<int, 1>((x[i].scales[is+0] & 0xF) * ((q >> 0) & 3)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - dmin * sycl::vec<int, 1>(x[i].scales[is+0] >> 4).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3792
+    Length:          133
+    ReplacementText: 'dall * sycl::vec<int, 1>((x[i].scales[is+2] & 0xF) * ((q >> 2) & 3)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - dmin * sycl::vec<int, 1>(x[i].scales[is+2] >> 4).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          3967
+    Length:          133
+    ReplacementText: 'dall * sycl::vec<int, 1>((x[i].scales[is+4] & 0xF) * ((q >> 4) & 3)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - dmin * sycl::vec<int, 1>(x[i].scales[is+4] >> 4).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          4142
+    Length:          133
+    ReplacementText: 'dall * sycl::vec<int, 1>((x[i].scales[is+6] & 0xF) * ((q >> 6) & 3)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - dmin * sycl::vec<int, 1>(x[i].scales[is+6] >> 4).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          4313
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          4404
+    Length:          0
+    ReplacementText: ",\n                                  const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          4428
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          4512
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          4608
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5144
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5169
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5179
+    Length:          38
+    ReplacementText: 'd_all * sycl::vec<int, 1>(us - 32).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5420
+    Length:          81
+    ReplacementText: 'dl * sycl::vec<int, 1>((int8_t)((q[l] >> shift) & 3) - ((hm[l] & m) ? 0 : 4)).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5527
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5829
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5920
+    Length:          0
+    ReplacementText: ",\n                                  const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          5996
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6055
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6227
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6239
+    Length:          19
+    ReplacementText: 'x[i].dm[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6270
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6282
+    Length:          20
+    ReplacementText: 'x[i].dm[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6433
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6443
+    Length:          31
+    ReplacementText: 'dall * sycl::vec<int, 1>(sc).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6486
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6496
+    Length:          31
+    ReplacementText: 'dmin * sycl::vec<int, 1>(m).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6589
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6599
+    Length:          31
+    ReplacementText: 'dall * sycl::vec<int, 1>(sc).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6642
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6652
+    Length:          30
+    ReplacementText: 'dmin * sycl::vec<int, 1>(m).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6762
+    Length:          49
+    ReplacementText: 'd1 * sycl::vec<int, 1>(q[l] & 0xF).convert<sycl::half, sycl::rounding_mode::rte>()[0] - m1'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6858
+    Length:          49
+    ReplacementText: 'd2 * sycl::vec<int, 1>(q[l] >> 4).convert<sycl::half, sycl::rounding_mode::rte>()[0] - m2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          6951
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7042
+    Length:          0
+    ReplacementText: ",\n                                  const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7118
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7227
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7441
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7453
+    Length:          19
+    ReplacementText: 'x[i].dm[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7484
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7496
+    Length:          20
+    ReplacementText: 'x[i].dm[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7689
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7699
+    Length:          31
+    ReplacementText: 'dall * sycl::vec<int, 1>(sc).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7738
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7748
+    Length:          30
+    ReplacementText: 'dmin * sycl::vec<int, 1>(m).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7840
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7850
+    Length:          31
+    ReplacementText: 'dall * sycl::vec<int, 1>(sc).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7889
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          7899
+    Length:          30
+    ReplacementText: 'dmin * sycl::vec<int, 1>(m).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8002
+    Length:          76
+    ReplacementText: 'd1 * sycl::vec<int, 1>((ql[0] & 0xF) + (qh[0] & hm ? 16 : 0)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - m1'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8118
+    Length:          76
+    ReplacementText: 'd1 * sycl::vec<int, 1>((ql[1] & 0xF) + (qh[1] & hm ? 16 : 0)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - m1'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8248
+    Length:          76
+    ReplacementText: 'd2 * sycl::vec<int, 1>((ql[0] >>  4) + (qh[0] & hm ? 16 : 0)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - m2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8364
+    Length:          76
+    ReplacementText: 'd2 * sycl::vec<int, 1>((ql[1] >>  4) + (qh[1] & hm ? 16 : 0)).convert<sycl::half, sycl::rounding_mode::rte>()[0] - m2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8478
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8569
+    Length:          0
+    ReplacementText: ",\n                                  const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8645
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8754
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          8945
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9137
+    Length:          90
+    ReplacementText: 'd * sycl::vec<int, 1>(sc[0] * ((int8_t)((ql[ 0] & 0xF) | (((qh >> 0) & 3) << 4)) - 32)).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9267
+    Length:          90
+    ReplacementText: 'd * sycl::vec<int, 1>(sc[2] * ((int8_t)((ql[32] & 0xF) | (((qh >> 2) & 3) << 4)) - 32)).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9397
+    Length:          90
+    ReplacementText: 'd * sycl::vec<int, 1>(sc[4] * ((int8_t)((ql[ 0]  >> 4) | (((qh >> 4) & 3) << 4)) - 32)).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9527
+    Length:          90
+    ReplacementText: 'd * sycl::vec<int, 1>(sc[6] * ((int8_t)((ql[32]  >> 4) | (((qh >> 6) & 3) << 4)) - 32)).convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9655
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9749
+    Length:          0
+    ReplacementText: ",\n                                     const sycl::nd_item<3> &item_ct1,\n                                     const uint64_t *iq2xxs_grid,\n                                     const uint8_t *ksigns_iq2xs,\n                                     const uint8_t *kmask_iq2xs"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9775
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          9868
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          10227
+    Length:          20
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[i].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          10472
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          10565
+    Length:          0
+    ReplacementText: ",\n                                    const sycl::nd_item<3> &item_ct1,\n                                    const uint64_t *iq2xs_grid,\n                                    const uint8_t *ksigns_iq2xs,\n                                    const uint8_t *kmask_iq2xs"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          10591
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          10681
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          10946
+    Length:          20
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[i].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          11206
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          11298
+    Length:          0
+    ReplacementText: ",\n                                   const sycl::nd_item<3> &item_ct1,\n                                   const uint64_t *iq2s_grid,\n                                   const uint8_t *kmask_iq2xs"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          11324
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          11412
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          11675
+    Length:          20
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[i].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          11932
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          12026
+    Length:          0
+    ReplacementText: ",\n                                     const sycl::nd_item<3> &item_ct1,\n                                     const uint32_t *iq3xxs_grid,\n                                     const uint8_t *ksigns_iq2xs,\n                                     const uint8_t *kmask_iq2xs"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          12052
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          12145
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          12606
+    Length:          20
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[i].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          12944
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          13036
+    Length:          0
+    ReplacementText: ",\n                                   const sycl::nd_item<3> &item_ct1,\n                                   const uint32_t *iq3xs_grid,\n                                   const uint8_t *kmask_iq2xs"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          13062
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          13150
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          13558
+    Length:          20
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[i].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          13908
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14000
+    Length:          0
+    ReplacementText: ",\n                                   const sycl::nd_item<3> &item_ct1,\n                                   const uint64_t *iq1s_grid_gpu"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14029
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14121
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14358
+    Length:          20
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[i].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14755
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14847
+    Length:          0
+    ReplacementText: ",\n                                   const sycl::nd_item<3> &item_ct1,\n                                   const uint64_t *iq1s_grid_gpu"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14876
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          14968
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          15406
+    Length:          23
+    ReplacementText: 'sycl::vec<sycl::half, 1>(scale.f16).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          15927
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16020
+    Length:          0
+    ReplacementText: ",\n                                    const sycl::nd_item<3> &item_ct1,\n                                    const int8_t *kvalues_iq4nl"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16046
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16154
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16344
+    Length:          21
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[ib].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16543
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16636
+    Length:          0
+    ReplacementText: ",\n                                    const sycl::nd_item<3> &item_ct1,\n                                    const int8_t *kvalues_iq4nl"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16661
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16750
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          16947
+    Length:          20
+    ReplacementText: 'sycl::vec<sycl::half, 1>(x[i].d).convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          17386
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          17513
+    Length:          108
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->parallel_for(\n        sycl::nd_range<3>(sycl::range<3>(1, 1, num_blocks) * sycl::range<3>(1, 1, CUDA_DEQUANTIZE_BLOCK_SIZE), sycl::range<3>(1, 1, CUDA_DEQUANTIZE_BLOCK_SIZE)), \n        [=](sycl::nd_item<3> item_ct1) {\n          dequantize_block<qk, qr, dequantize_kernel>(vx, y, k, item_ct1);\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          17621
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          17729
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          17785
+    Length:          51
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->parallel_for(\n        sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 64), sycl::range<3>(1, 1, 64)), \n        [=](sycl::nd_item<3> item_ct1) {\n          dequantize_block_q2_K(vx, y, item_ct1);\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          17836
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          17944
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18000
+    Length:          51
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->parallel_for(\n        sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 64), sycl::range<3>(1, 1, 64)), \n        [=](sycl::nd_item<3> item_ct1) {\n          dequantize_block_q3_K(vx, y, item_ct1);\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18051
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18159
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18215
+    Length:          51
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->parallel_for(\n        sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n        [=](sycl::nd_item<3> item_ct1) {\n          dequantize_block_q4_K(vx, y, item_ct1);\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18266
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18374
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18430
+    Length:          51
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->parallel_for(\n        sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 64), sycl::range<3>(1, 1, 64)), \n        [=](sycl::nd_item<3> item_ct1) {\n          dequantize_block_q5_K(vx, y, item_ct1);\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18481
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18589
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18645
+    Length:          51
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->parallel_for(\n        sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 64), sycl::range<3>(1, 1, 64)), \n        [=](sycl::nd_item<3> item_ct1) {\n          dequantize_block_q6_K(vx, y, item_ct1);\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18696
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18807
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18863
+    Length:          54
+    ReplacementText: "{\n      extern dpct::global_memory<uint64_t, 1> iq2xxs_grid;\n      extern dpct::global_memory<uint8_t, 1> ksigns_iq2xs;\n      extern dpct::global_memory<uint8_t, 1> kmask_iq2xs;\n\n      iq2xxs_grid.init(*stream);\n      ksigns_iq2xs.init(*stream);\n      kmask_iq2xs.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto iq2xxs_grid_ptr_ct1 = iq2xxs_grid.get_ptr();\n          auto ksigns_iq2xs_ptr_ct1 = ksigns_iq2xs.get_ptr();\n          auto kmask_iq2xs_ptr_ct1 = kmask_iq2xs.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq2_xxs(vx, y, item_ct1, iq2xxs_grid_ptr_ct1, ksigns_iq2xs_ptr_ct1, kmask_iq2xs_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          18917
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19027
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19083
+    Length:          53
+    ReplacementText: "{\n      extern dpct::global_memory<uint64_t, 1> iq2xs_grid;\n      extern dpct::global_memory<uint8_t, 1> ksigns_iq2xs;\n      extern dpct::global_memory<uint8_t, 1> kmask_iq2xs;\n\n      iq2xs_grid.init(*stream);\n      ksigns_iq2xs.init(*stream);\n      kmask_iq2xs.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto iq2xs_grid_ptr_ct1 = iq2xs_grid.get_ptr();\n          auto ksigns_iq2xs_ptr_ct1 = ksigns_iq2xs.get_ptr();\n          auto kmask_iq2xs_ptr_ct1 = kmask_iq2xs.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq2_xs(vx, y, item_ct1, iq2xs_grid_ptr_ct1, ksigns_iq2xs_ptr_ct1, kmask_iq2xs_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19136
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19245
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19301
+    Length:          52
+    ReplacementText: "{\n      extern dpct::global_memory<uint64_t, 1> iq2s_grid;\n      extern dpct::global_memory<uint8_t, 1> kmask_iq2xs;\n\n      iq2s_grid.init(*stream);\n      kmask_iq2xs.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto iq2s_grid_ptr_ct1 = iq2s_grid.get_ptr();\n          auto kmask_iq2xs_ptr_ct1 = kmask_iq2xs.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq2_s(vx, y, item_ct1, iq2s_grid_ptr_ct1, kmask_iq2xs_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19353
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19464
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19520
+    Length:          54
+    ReplacementText: "{\n      extern dpct::global_memory<uint32_t, 1> iq3xxs_grid;\n      extern dpct::global_memory<uint8_t, 1> ksigns_iq2xs;\n      extern dpct::global_memory<uint8_t, 1> kmask_iq2xs;\n\n      iq3xxs_grid.init(*stream);\n      ksigns_iq2xs.init(*stream);\n      kmask_iq2xs.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto iq3xxs_grid_ptr_ct1 = iq3xxs_grid.get_ptr();\n          auto ksigns_iq2xs_ptr_ct1 = ksigns_iq2xs.get_ptr();\n          auto kmask_iq2xs_ptr_ct1 = kmask_iq2xs.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq3_xxs(vx, y, item_ct1, iq3xxs_grid_ptr_ct1, ksigns_iq2xs_ptr_ct1, kmask_iq2xs_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19574
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19683
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19739
+    Length:          52
+    ReplacementText: "{\n      extern dpct::global_memory<uint32_t, 1> iq3xs_grid;\n      extern dpct::global_memory<uint8_t, 1> kmask_iq2xs;\n\n      iq3xs_grid.init(*stream);\n      kmask_iq2xs.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto iq3xs_grid_ptr_ct1 = iq3xs_grid.get_ptr();\n          auto kmask_iq2xs_ptr_ct1 = kmask_iq2xs.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq3_s(vx, y, item_ct1, iq3xs_grid_ptr_ct1, kmask_iq2xs_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19791
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19900
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          19956
+    Length:          52
+    ReplacementText: "{\n      extern dpct::global_memory<uint64_t, 1> iq1s_grid_gpu;\n\n      iq1s_grid_gpu.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto iq1s_grid_gpu_ptr_ct1 = iq1s_grid_gpu.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq1_s(vx, y, item_ct1, iq1s_grid_gpu_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20008
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20117
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20173
+    Length:          52
+    ReplacementText: "{\n      extern dpct::global_memory<uint64_t, 1> iq1s_grid_gpu;\n\n      iq1s_grid_gpu.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto iq1s_grid_gpu_ptr_ct1 = iq1s_grid_gpu.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq1_m(vx, y, item_ct1, iq1s_grid_gpu_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20225
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20335
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20404
+    Length:          53
+    ReplacementText: "{\n      extern dpct::global_memory<int8_t, 1> kvalues_iq4nl;\n\n      kvalues_iq4nl.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto kvalues_iq4nl_ptr_ct1 = kvalues_iq4nl.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq4_nl(vx, y, item_ct1, kvalues_iq4nl_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20457
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20567
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20636
+    Length:          53
+    ReplacementText: "{\n      extern dpct::global_memory<int8_t, 1> kvalues_iq4nl;\n\n      kvalues_iq4nl.init(*stream);\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          auto kvalues_iq4nl_ptr_ct1 = kvalues_iq4nl.get_ptr();\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(sycl::range<3>(1, 1, nb) * sycl::range<3>(1, 1, 32), sycl::range<3>(1, 1, 32)), \n            [=](sycl::nd_item<3> item_ct1) {\n              dequantize_block_iq4_xs(vx, y, item_ct1, kvalues_iq4nl_ptr_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/dequantize.cuh'
+    Offset:          20689
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  ''
+    Digest:          ''
+    HasCUDASyntax:   false
+DpctVersion:     2025.1.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           ''
+    ValueVec:
+      - '/root/kunshang/vllm/csrc'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UseSYCLCompat:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

@@ -1,0 +1,1447 @@
+---
+MainSourceFile:  '/root/kunshang/vllm/csrc/sycl_result/quantization/gguf/moe.dp.hpp'
+Replacements:
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          0
+    Length:          0
+    ReplacementText: "#define DPCT_PROFILING_ENABLED\n#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          399
+    Length:          0
+    ReplacementText: "/*\nDPCT1110:119: The total declared local variable size in device function moe_q exceeds 128 bytes and may cause high register pressure. Consult with your hardware vendor to find the total register size available and adjust the code, or use smaller sub-group size to avoid high register pressure.\n*/\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          406
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          417
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          815
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1,\n    int *tile_y_qs, sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1031
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1111
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1268
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1324
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1387
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1601
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1755
+    Length:          49
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          1807
+    Length:          59
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          2115
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          2166
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          2389
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          2807
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          2945
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          2996
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3054
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3135
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3337
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3411
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3453
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3648
+    Length:          21
+    ReplacementText: '(*dsi_src)[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3701
+    Length:          0
+    ReplacementText: "      /*\n      DPCT1118:120: SYCL group functions and algorithms must be encountered in converged control flow. You may need to adjust the code.\n      */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          3707
+    Length:          15
+    ReplacementText: "/*\n      DPCT1065:342: Consider replacing sycl::nd_item::barrier() with sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better performance if there is no access to global memory.\n      */\n      item_ct1.barrier()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          4215
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          4232
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          4283
+    Length:          0
+    ReplacementText: "      /*\n      DPCT1118:121: SYCL group functions and algorithms must be encountered in converged control flow. You may need to adjust the code.\n      */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          4289
+    Length:          15
+    ReplacementText: "/*\n      DPCT1065:343: Consider replacing sycl::nd_item::barrier() with sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better performance if there is no access to global memory.\n      */\n      item_ct1.barrier()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          4585
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          4987
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          5467
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          5927
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6319
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6544
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6598
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6712
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:122: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6716
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q4_0<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6935
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6986
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:123: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          6990
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q4_0<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          7209
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          7450
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          7930
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          8390
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          8782
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9007
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9061
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9175
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:124: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9179
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q4_1<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9398
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9449
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:125: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9453
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q4_1<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9672
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          9913
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          10393
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          10854
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11246
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11489
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11543
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11657
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:126: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11661
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q5_0<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11880
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11931
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:127: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          11935
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q5_0<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          12154
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          12395
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          12875
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          13335
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          13727
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          13970
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14024
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14138
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:128: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14142
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q5_1<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14361
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14412
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:129: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14416
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q5_1<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14635
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          14876
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          15356
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          15817
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16209
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16452
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16506
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16620
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:130: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16624
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q8_0<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16843
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16894
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:131: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          16898
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q8_0<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          17117
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          17358
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          17838
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          18298
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          18690
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          18933
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          18987
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          19101
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:132: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          19105
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q2_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          19324
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          19375
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:133: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          19379
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q2_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          19598
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          19839
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          20319
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          20780
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21171
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21414
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21468
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21582
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:134: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21586
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q3_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21805
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21856
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:135: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          21860
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q3_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          22079
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          22320
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          22800
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          23259
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          23651
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          23894
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          23948
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          24062
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:136: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          24066
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q4_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          24285
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          24336
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:137: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          24340
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q4_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          24559
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          24800
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          25280
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          25739
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26131
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26374
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26428
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26542
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:138: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26546
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q5_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26765
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26816
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:139: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          26820
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q5_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          27039
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          27280
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          27760
+    Length:          0
+    ReplacementText: ", const sycl::nd_item<3> &item_ct1, int *tile_y_qs,\n             sycl::half2 *tile_y_ds"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          28220
+    Length:          0
+    ReplacementText: ', item_ct1, tile_y_qs, tile_y_ds'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          28612
+    Length:          12
+    ReplacementText: 'dpct::queue_ptr'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          28855
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          28909
+    Length:          4
+    ReplacementText: 'dpct::dim3'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          29023
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:140: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          29027
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q6_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          29246
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          29297
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:141: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          29301
+    Length:          219
+    ReplacementText: "{\n      dpct::has_capability_or_fail(stream->get_device(), {sycl::aspect::fp16});\n\n      stream->submit(\n        [&](sycl::handler &cgh) {\n          sycl::local_accessor<int, 1> tile_y_qs_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF), cgh);\n          sycl::local_accessor<sycl::half2, 1> tile_y_ds_acc_ct1(sycl::range<1>(mmq_x * WARP_SIZE_GGUF / QI8_1), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(block_nums * block_dims, block_dims), \n            [=](sycl::nd_item<3> item_ct1) {\n              moe_q6_K<scalar_t, need_check>(w, inp, dst, sorted_token_ids, expert_ids, num_tokens_post_padded, exp_stride, ncols_x, nrows_x, ncols_y, nrows_y, nrows_dst, top_k, item_ct1, tile_y_qs_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get(), tile_y_ds_acc_ct1.get_multi_ptr<sycl::access::decorated::no>().get());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/root/kunshang/vllm/csrc/quantization/gguf/moe.cuh'
+    Offset:          29520
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  ''
+    Digest:          ''
+    HasCUDASyntax:   false
+DpctVersion:     2025.1.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           ''
+    ValueVec:
+      - '/root/kunshang/vllm/csrc'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  BuildScript:
+    Value:           '0'
+    Specified:       false
+  CodePinEnabled:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'true'
+    Specified:       true
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UseSYCLCompat:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...
