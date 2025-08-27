@@ -8,10 +8,8 @@ import sys
 from pathlib import Path
 from shutil import which
 
-from packaging.version import Version
 from setuptools import Extension, setup
 from setuptools.command.build_ext import build_ext
-from torch.utils.cpp_extension import SYCL_HOME
 
 
 def load_module_from_path(module_name, path):
@@ -55,19 +53,6 @@ def is_url_available(url: str) -> bool:
     return status == 200
 
 
-def get_oneapi_version() -> Version:
-    """Get the oneapi version from
-    """
-    assert SYCL_HOME is not None, "SYCL_HOME environment variable is not set."
-    icpx_output = subprocess.check_output([SYCL_HOME + "/bin/icpx", "-v"],
-                                          universal_newlines=True)
-    print("=============== icpx version ===============")
-    print(f"sycl home: {SYCL_HOME}")
-    print(icpx_output)
-    print("=============== icpx version ===============")
-    # output = icpx_output.split()
-
-
 def _build_custom_ops() -> bool:
     return True
 
@@ -102,7 +87,6 @@ class cmake_build_ext(build_ext):
                 num_jobs = os.cpu_count()
 
         nvcc_threads = None
-        get_oneapi_version()
 
         return num_jobs, nvcc_threads
 
