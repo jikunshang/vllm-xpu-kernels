@@ -228,6 +228,7 @@ void moe_align_block_size(torch::Tensor topk_ids, int64_t num_experts,
 
   VLLM_DISPATCH_INTEGRAL_AND_UNSIGNED_TYPES(
       topk_ids.scalar_type(), "moe_align_block_size_kernel", [&] {
+        using sycl_t = vllm::xpu::SyclTypeTrait<scalar_t>::Type;
         // calc needed amount of shared mem for `cumsum` tensors
         auto options_int =
             torch::TensorOptions().dtype(torch::kInt).device(topk_ids.device());
@@ -239,8 +240,6 @@ void moe_align_block_size(torch::Tensor topk_ids, int64_t num_experts,
         if (small_batch_expert_mode) {
         } else {
           size_t num_warps = CEILDIV(padded_num_experts, experts_per_warp);
-          size_t shared_mem_size =
-              num_warps * experts_per_warp * sizeof(int32_t);
           queue.submit([&](sycl::handler& cgh) {
             size_t shared_mem_size =
                 num_warps * experts_per_warp * sizeof(int32_t);
@@ -248,8 +247,8 @@ void moe_align_block_size(torch::Tensor topk_ids, int64_t num_experts,
                 sycl::range<1>(shared_mem_size), cgh);
             cgh.parallel_for(
                 sycl::nd_range<3>(grid * block, block),
-                vllm::moe::moe_align_block_size_kernel<scalar_t>(
-                    topk_ids.data_ptr<scalar_t>(),
+                vllm::moe::moe_align_block_size_kernel<sycl_t>(
+                    (sycl_t*)topk_ids.data_ptr<scalar_t>(),
                     sorted_token_ids.data_ptr<int32_t>(),
                     experts_ids.data_ptr<int32_t>(),
                     num_tokens_post_pad.data_ptr<int32_t>(), num_experts,
@@ -269,8 +268,8 @@ void moe_align_block_size(torch::Tensor topk_ids, int64_t num_experts,
           queue.submit([&](sycl::handler& cgh) {
             cgh.parallel_for(
                 sycl::nd_range<3>(grid_1 * block_1, block_1),
-                vllm::moe::count_and_sort_expert_tokens_kernel<scalar_t>(
-                    topk_ids.data_ptr<scalar_t>(),
+                vllm::moe::count_and_sort_expert_tokens_kernel<sycl_t>(
+                    (sycl_t*)topk_ids.data_ptr<scalar_t>(),
                     sorted_token_ids.data_ptr<int32_t>(),
                     cumsum_buffer.data_ptr<int32_t>(), topk_ids.numel()));
           });
