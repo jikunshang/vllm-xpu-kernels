@@ -133,6 +133,19 @@ TORCH_LIBRARY_EXPAND(TORCH_EXTENSION_NAME, ops) {
       "xpu_memcpy_sync(int dst_ptr, int src_ptr, int n_bytes, int kind, "
       "int device=-1) -> ()");
   ops.impl("xpu_memcpy_sync", &xpu_memcpy_sync);
+
+  // Merge attn states
+  // Implements section 2.2 of https://www.arxiv.org/pdf/2501.01005
+  // can be used to combine partial attention results (in the split-KV case)
+  ops.def(
+      "merge_attn_states("
+      "    Tensor! output,"
+      "    Tensor!? output_lse,"
+      "    Tensor prefix_output,"
+      "    Tensor prefix_lse,"
+      "    Tensor suffix_output,"
+      "    Tensor suffix_lse) -> ()");
+  ops.impl("merge_attn_states", torch::kXPU, &merge_attn_states);
 }
 
 TORCH_LIBRARY_EXPAND(CONCAT(TORCH_EXTENSION_NAME, _cache_ops), cache_ops) {
