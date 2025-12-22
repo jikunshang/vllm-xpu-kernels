@@ -1,0 +1,52 @@
+name: build latest docker
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/*'
+      - 'Dockerfile.xpu'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/*'
+      - 'Dockerfile.xpu'
+
+permissions:
+  contents: read
+
+env:
+  REGISTRY: localhost:5000
+
+jobs:
+  build-docker-image-latest-pvc:
+    runs-on: self-hosted-pvc
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: build docker image & push to local
+        id: build-image
+        run: |
+          cp -r "$HOME/umd" ./umd
+          docker build -t xpu-kernel-ci-image -f Dockerfile.xpu .
+          docker tag xpu-kernel-ci-image:latest ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
+          docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
+
+  build-docker-image-latest-bmg:
+    runs-on: self-hosted-bmg
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: build docker image & push to local
+        id: build-image
+        run: |
+          cp -r "$HOME/umd" ./umd
+          docker build -t xpu-kernel-ci-image -f Dockerfile.xpu .
+          docker tag xpu-kernel-ci-image:latest ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
+          docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest

@@ -1,0 +1,32 @@
+name: wheel-per-commit
+
+on:
+  workflow_run:
+    workflows: ["build latest docker"]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build-wheel-on-pvc:
+    runs-on: self-hosted-pvc
+    container:                      
+      image: localhost:5000/xpu-kernel-ci-image:latest   
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: build wheel
+        run: |
+          python3 -m pip config set global.break-system-packages true
+          pip wheel --extra-index-url=https://download.pytorch.org/whl/xpu -e . -v
+
+      - name: up load to artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheel-${{ github.sha }}
+          path: vllm_xpu_kernels*.whl
