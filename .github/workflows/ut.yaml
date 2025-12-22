@@ -8,6 +8,9 @@ on:
 permissions: 
   contents: read
 
+env:
+  REGISTRY: localhost
+
 jobs:
   build-docker-image-pvc:
     runs-on: self-hosted-pvc
@@ -22,6 +25,7 @@ jobs:
         run: |
           cp -r "$HOME/umd" ./umd
           docker build -t xpu-kernel-ci-image -f Dockerfile.xpu .
+          docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
           
   build-wheel-on-pvc:
     runs-on: self-hosted-pvc
