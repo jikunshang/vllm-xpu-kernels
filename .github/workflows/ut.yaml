@@ -40,13 +40,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: install dependency
+      - name: build wheel
         run: |
           python3 -m pip config set global.break-system-packages true
-          pip install -r requirements.txt
-
-      - name: build wheel
-        run: pip wheel --extra-index-url=https://download.pytorch.org/whl/xpu -e . -v
+          pip wheel --extra-index-url=https://download.pytorch.org/whl/xpu -e . -v
 
       - name: up load to artifact
         uses: actions/upload-artifact@v4
@@ -69,6 +66,7 @@ jobs:
 
       - name: build & install wheel
         run: |
+          python3 -m pip config set global.break-system-packages true
           pip install -r requirements.txt
           pip install --extra-index-url=https://download.pytorch.org/whl/xpu -e . -v
 
