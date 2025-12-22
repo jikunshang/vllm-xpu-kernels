@@ -5,9 +5,9 @@ on:
     workflows: ["build latest docker"]
     types: [completed]
     branches: [main]
-  pull_request:
-  push:
-    branches: [main]
+  # pull_request:
+  # push:
+  #   branches: [main]
 
 permissions: 
   contents: read
@@ -18,11 +18,13 @@ env:
 jobs:
   run-unit-tests-pvc:
     runs-on: self-hosted-pvc
-    timeout-minutes: 20
+    timeout-minutes: 30
     container:                      
       image: localhost:5000/xpu-kernel-ci-image:latest
       options: --device /dev/dri -v /dev/dri/by-path:/dev/dri/by-path --privileged 
     steps:
+      - name: Configure Git safe directory
+        run: git config --global --add safe.directory '*'
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -40,11 +42,13 @@ jobs:
 
   run-unit-tests-bmg:
     runs-on: self-hosted-bmg
-    timeout-minutes: 20
-    container:                      
+    timeout-minutes: 30
+    container: 
       image: localhost:5000/xpu-kernel-ci-image:latest
       options: --device /dev/dri -v /dev/dri/by-path:/dev/dri/by-path --privileged 
     steps:
+      - name: Configure Git safe directory
+        run: git config --global --add safe.directory '*'
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
