@@ -33,7 +33,7 @@ jobs:
     # needs: build-docker-image-pvc
     container:                      
       image: localhost:5000/xpu-kernel-ci-image:latest   
-      options: --user root   
+      options: --user root
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -42,6 +42,7 @@ jobs:
 
       - name: install dependency
         run: |
+          python3 -m pip config set global.break-system-packages true
           pip install -r requirements.txt
 
       - name: build wheel
@@ -58,7 +59,7 @@ jobs:
     # needs: build-docker-image-pvc
     timeout-minutes: 20
     container:                      
-      image: xpu-kernel-ci-image:latest
+      image: localhost:5000/xpu-kernel-ci-image:latest
       options: --device /dev/dri -v /dev/dri/by-path:/dev/dri/by-path --privileged 
     steps:
       - name: Checkout
