@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 env:
-  REGISTRY: localhost
+  REGISTRY: localhost:5000
 
 jobs:
   build-docker-image-pvc:
@@ -25,13 +25,14 @@ jobs:
         run: |
           cp -r "$HOME/umd" ./umd
           docker build -t xpu-kernel-ci-image -f Dockerfile.xpu .
+          docker tag xpu-kernel-ci-image:latest ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
           docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
           
   build-wheel-on-pvc:
     runs-on: self-hosted-pvc
     needs: build-docker-image-pvc
     container:                      
-      image: xpu-kernel-ci-image:latest   
+      image: localhost:5000/xpu-kernel-ci-image:latest   
       options: --user root   
     steps:
       - name: Checkout
