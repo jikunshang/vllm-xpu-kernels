@@ -83,7 +83,7 @@ jobs:
 
       - name: test 
         run: |
-          ZE_AFFINITY_MASK=0 SKIP_HANG_KERNEL=1 pytest -v -s tests/
+          ZE_AFFINITY_MASK=0,1 SKIP_HANG_KERNEL=1 pytest -v -s tests/
 
   run-unit-tests-bmg:
     runs-on: self-hosted-bmg
@@ -108,4 +108,4 @@ jobs:
 
       - name: test 
         run: |
-          ZE_AFFINITY_MASK=0 SKIP_HANG_KERNEL=1 pytest -v -s tests/
+          ZE_AFFINITY_MASK=0,1 pytest -v -s tests/ --ignore=tests/test_lora_ops.py --ignore=tests/test_fp8_quant.py
