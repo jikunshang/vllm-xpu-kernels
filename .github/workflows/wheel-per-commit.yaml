@@ -24,6 +24,8 @@ jobs:
       image: localhost:5000/xpu-kernel-ci-image:latest   
       options: --user root
     steps:
+      - name: Configure Git safe directory
+        run: git config --global --add safe.directory '*'
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -101,3 +103,9 @@ jobs:
         run: |
           echo "Wheel built successfully for commit ${{ github.sha }}"
           echo "Download: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+      
+      - name: Clean workspace
+        run: |
+          sudo chown -R "$(id -u):$(id -g)" . || true
+          git clean -ffdx || true
+          git reset --hard || true
