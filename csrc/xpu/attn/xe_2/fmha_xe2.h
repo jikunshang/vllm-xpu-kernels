@@ -43,6 +43,7 @@ void varlen_xe2_impl(
     int window_size_right,
     bool is_causal,
     bool is_local,
-    bool is_sink);
+    bool is_sink,
+    bool is_fp8kv);
 
 }  // namespace vllm::xpu::attn

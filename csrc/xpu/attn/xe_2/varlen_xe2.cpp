@@ -1,5 +1,5 @@
 #include "fmha_xe2.h"
-#include "chunk_prefill.hpp"
+#include "chunk_prefill.h"
 
 namespace vllm::xpu::attn {
 
@@ -24,7 +24,7 @@ void varlen_xe2_impl(
     bool is_local,
     bool is_sink,
     bool is_fp8kv) {
-  fmha_kernel_impl<false>(
+  fmha_kernel_impl_false(
       queue,
       query,
       key_cache,
@@ -41,7 +41,6 @@ void varlen_xe2_impl(
       sm_sink_,
       window_size_left,
       window_size_right,
-      true,  // is_varlen,
       is_causal,
       is_local,
       is_sink,

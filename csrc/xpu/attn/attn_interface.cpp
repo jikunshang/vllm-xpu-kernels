@@ -75,7 +75,8 @@ void fmha_interface(
           window_size_right,
           is_causal,
           is_local,
-          is_sink);
+          is_sink,
+          false);
     }
 #else
     TORCH_CHECK(false, "XE2 cutlass kernel is not enabled in this build.");
