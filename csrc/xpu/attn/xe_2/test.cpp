@@ -30,4 +30,10 @@ template void policy_dispatch<chunk_policy_head64, chunk_prefill_args_t<true>>(
     c10::ScalarType,
     const chunk_prefill_args_t<true>&);
 
-}
+template void policy_dispatch<chunk_policy_head64, chunk_prefill_args_t<false>>(
+    sycl::queue&,
+    c10::ScalarType,
+    c10::ScalarType,
+    const chunk_prefill_args_t<false>&);
+
+}  // namespace vllm::xpu::attn
