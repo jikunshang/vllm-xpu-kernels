@@ -1,6 +1,7 @@
 #pragma once
 #include "torch/all.h"
 #include <cute/tensor.hpp>
+#include "cutlass/numeric_types.h"
 
 #define HEAD_SIZE_LIMIT_0 64
 #define HEAD_SIZE_LIMIT_1 96
@@ -8,23 +9,23 @@
 #define HEAD_SIZE_LIMIT_3 192
 #define HEAD_SIZE_LIMIT_4 256
 
-enum class CutlassType {
-  half,
-  bfloat16,
-};
+// enum class CutlassType {
+//   cutlass::half_t,
+//   cutlass::bfloat16_t,
+// };
 
-inline CutlassType aten_to_Cutlass_dtype(const at::Tensor& input) {
-  CutlassType cuType;
-  if (input.scalar_type() == torch::kHalf) {
-    cuType = CutlassType::half;
-  } else if (input.scalar_type() == torch::kBFloat16) {
-    cuType = CutlassType::bfloat16;
-  } else {
-    TORCH_INTERNAL_ASSERT(
-        false, "Current cutlass kernel only support half/bf16 data type.");
-  }
-  return cuType;
-}
+// inline CutlassType aten_to_Cutlass_dtype(const at::Tensor& input) {
+//   CutlassType cuType;
+//   if (input.scalar_type() == torch::kHalf) {
+//     cuType = CutlassType::half;
+//   } else if (input.scalar_type() == torch::kBFloat16) {
+//     cuType = CutlassType::bfloat16;
+//   } else {
+//     TORCH_INTERNAL_ASSERT(
+//         false, "Current cutlass kernel only support half/bf16 data type.");
+//   }
+//   return cuType;
+// }
 
 using namespace cute;
 struct chunk_policy_head64 {

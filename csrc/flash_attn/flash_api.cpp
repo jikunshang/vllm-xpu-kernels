@@ -22,6 +22,8 @@ std::vector<at::Tensor> mha_varlen_fwd(
     int max_seqlen_q,
     int max_seqlen_k,
     float p_dropout,
+    float k_scale,
+    float v_scale,
     float softmax_scale,
     std::optional<const at::Tensor>& softmax_sink_,
     const bool zero_tensors,
@@ -32,14 +34,23 @@ std::vector<at::Tensor> mha_varlen_fwd(
     const bool return_softmax,
     std::optional<at::Generator> gen_) {
   auto q_type = q.scalar_type();
+  auto k_type = k.scalar_type();
   TORCH_CHECK(
       q_type == at::ScalarType::Half || q_type == at::ScalarType::BFloat16,
       "VLLM Kernel XPU only supports fp16 and bf16 type");
+  TORCH_CHECK(
+      v.scalar_type() == k_type, "value and key must have the same dtype");
 
-  TORCH_CHECK(
-      k.scalar_type() == q_type, "query and key must have the same dtype");
-  TORCH_CHECK(
-      v.scalar_type() == q_type, "query and value must have the same dtype");
+  bool is_fp8kv = false;
+  if (k_type == at::ScalarType::Float8_e5m2 ||
+      k_type == at::ScalarType::Float8_e4m3fn) {
+    is_fp8kv = true;
+  } else {
+    TORCH_CHECK(
+        k.scalar_type() == q_type, "query and key must have the same dtype");
+    TORCH_CHECK(
+        v.scalar_type() == q_type, "query and value must have the same dtype");
+  }
 
   CHECK_DEVICE(q);
   CHECK_DEVICE(k);
@@ -96,7 +107,7 @@ std::vector<at::Tensor> mha_varlen_fwd(
 
   at::Tensor seqlens_k = is_paged ? *seqused_k : cu_seqlens_k;
 
-  cutlass_chunk_prefill_interface(
+  vllm::xpu::attn::fmha_interface(
       queue,
       q,
       k,
@@ -107,6 +118,8 @@ std::vector<at::Tensor> mha_varlen_fwd(
       seqlens_k,
       max_seqlen_q,
       max_seqlen_k,
+      k_scale,
+      v_scale,
       softmax_scale,
       softmax_sink_,
       window_size_left,
@@ -115,7 +128,8 @@ std::vector<at::Tensor> mha_varlen_fwd(
       is_paged,
       is_causal,
       is_local,
-      is_sink);
+      is_sink,
+      is_fp8kv);
 
   if (return_softmax) {
     // FIXME: current do not support store softmax_lse out
@@ -134,8 +148,9 @@ TORCH_LIBRARY_EXPAND(TORCH_EXTENSION_NAME, ops) {
       "cu_seqlens_q, "
       "Tensor cu_seqlens_k, Tensor? seqused_k, Tensor? leftpad_k, Tensor? "
       "block_table, Tensor? alibi_slopes, "
-      "int max_seqlen_q, int max_seqlen_k, float p_dropout, float "
-      "softmax_scale, Tensor? softmax_sink, bool zero_tensors, "
+      "int max_seqlen_q, int max_seqlen_k, float p_dropout, float k_scale, "
+      "float v_scale, "
+      "float softmax_scale, Tensor? softmax_sink, bool zero_tensors, "
       "bool is_causal, int window_size_left, int window_size_right, float "
       "softcap, bool return_softmax, "
       "Generator? gen) -> Tensor[]");

@@ -1,7 +1,9 @@
+#include "fmha_xe2.h"
+#include "chunk_prefill.hpp"
 
 namespace vllm::xpu::attn {
 
-void fmha_interface(
+void chunk_prefill_xe2_impl(
     sycl::queue& queue,
     const at::Tensor& query,      // [seq_q, heads, head_size]
     const at::Tensor& key_cache,  // [num_block, block_size, heads, head_size]
@@ -18,11 +20,32 @@ void fmha_interface(
     std::optional<const at::Tensor>& sm_sink_,
     int window_size_left,
     int window_size_right,
-    bool is_varlen,
-    bool is_paged,
     bool is_causal,
     bool is_local,
     bool is_sink,
-    bool is_fp8kv);
-
+    bool is_fp8kv) {
+  fmha_kernel_impl<true>(
+      queue,
+      query,
+      key_cache,
+      value_cache,
+      out,
+      block_table,
+      cu_seqlens_q,
+      cu_seqlens_k,
+      max_seqlen_q,
+      max_seqlen_k,
+      k_scale,
+      v_scale,
+      sm_scale,
+      sm_sink_,
+      window_size_left,
+      window_size_right,
+      true,  // is_varlen,
+      is_causal,
+      is_local,
+      is_sink,
+      is_fp8kv);
 }
+
+}  // namespace vllm::xpu::attn
