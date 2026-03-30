@@ -191,6 +191,17 @@ TORCH_LIBRARY_EXPAND(CONCAT(TORCH_EXTENSION_NAME, _cache_ops), cache_ops) {
       "Tensor slot_mapping, int quant_block_size, str scale_fmt) -> ()");
   cache_ops.impl(
       "indexer_k_quant_and_cache", torch::kXPU, &indexer_k_quant_and_cache);
+
+  // Gather cache blocks with optional FP8 dequantization.
+  cache_ops.def(
+      "gather_and_maybe_dequant_cache(Tensor src_cache, Tensor! dst, "
+      "Tensor block_table, Tensor cu_seq_lens, Tensor token_to_seq, "
+      "int num_tokens, str kv_cache_dtype, Tensor scale, "
+      "Tensor? seq_starts) -> ()");
+  cache_ops.impl(
+      "gather_and_maybe_dequant_cache",
+      torch::kXPU,
+      &gather_and_maybe_dequant_cache);
 }
 
 REGISTER_EXTENSION(TORCH_EXTENSION_NAME)

@@ -151,6 +151,21 @@ def indexer_k_quant_and_cache(k: torch.Tensor, kv_cache: torch.Tensor,
                                                      scale_fmt)
 
 
+def gather_and_maybe_dequant_cache(
+        src_cache: torch.Tensor,
+        dst: torch.Tensor,
+        block_table: torch.Tensor,
+        cu_seq_lens: torch.Tensor,
+        token_to_seq: torch.Tensor,
+        num_tokens: int,
+        kv_cache_dtype: str,
+        scale: torch.Tensor,
+        seq_starts: Optional[torch.Tensor] = None) -> None:
+    torch.ops._C_cache_ops.gather_and_maybe_dequant_cache(
+        src_cache, dst, block_table, cu_seq_lens, token_to_seq, num_tokens,
+        kv_cache_dtype, scale, seq_starts)
+
+
 def xpu_memcpy_sync(dst_ptr: int,
                     src_ptr: int,
                     n_bytes: int,
@@ -177,7 +192,7 @@ def convert_fp8(
     dst_cache: torch.Tensor,
     src_cache: torch.Tensor,
     scale: float,
-    kv_dtype: str,
+    kv_dtype: str = "fp8",
 ) -> None:
     """Convert between FP8 and FP16/BF16/FP32 formats with scaling.
 

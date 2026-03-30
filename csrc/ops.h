@@ -81,6 +81,17 @@ void indexer_k_quant_and_cache(
     int64_t quant_block_size,     // quantization block size
     const std::string& scale_fmt);
 
+void gather_and_maybe_dequant_cache(
+    torch::Tensor const& src_cache,     // [NUM_BLOCKS, BLOCK_SIZE, ENTRIES...]
+    torch::Tensor const& dst,           // [TOT_TOKENS, ENTRIES...]
+    torch::Tensor const& block_table,   // [BATCH, BLOCK_INDICES]
+    torch::Tensor const& cu_seq_lens,   // [BATCH+1]
+    torch::Tensor const& token_to_seq,  // [MAX_TOKEN_ACROSS_CHUNKS]
+    int64_t num_tokens,
+    const std::string& kv_cache_dtype,
+    torch::Tensor const& scale,
+    std::optional<torch::Tensor> seq_starts = std::nullopt);
+
 void static_scaled_fp8_quant(
     torch::Tensor& out,
     torch::Tensor const& input,
