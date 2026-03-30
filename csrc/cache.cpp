@@ -609,6 +609,106 @@ class cp_gather_indexer_k_quant_cache_kernel {
   int quant_block_size_;
 };
 
+
+// grid is launched with dimensions (num_tokens)
+template <typename scalar_t, typename cache_t, Fp8KVCacheDataType kv_dt>
+class gather_and_maybe_dequant_cache_kernel {
+ public:
+  gather_and_maybe_dequant_cache_kernel(
+      const cache_t* __restrict__ src_cache,
+      scalar_t* __restrict__ dst,
+      const int32_t* __restrict__ block_table,
+      const int32_t* __restrict__ cu_seq_lens,
+      const int32_t* __restrict__ token_to_seq,
+      const int32_t num_tokens,
+      const int32_t block_size,
+      const int32_t entry_size,
+      const int64_t block_table_stride,
+      const int64_t cache_block_stride,
+      const int64_t cache_entry_stride,
+      const int64_t dst_entry_stride,
+      const float* __restrict__ scale,
+      const int32_t* __restrict__ seq_starts)
+      : src_cache_(src_cache),
+        dst_(dst),
+        block_table_(block_table),
+        cu_seq_lens_(cu_seq_lens),
+        token_to_seq_(token_to_seq),
+        num_tokens_(num_tokens),
+        block_size_(block_size),
+        entry_size_(entry_size),
+        block_table_stride_(block_table_stride),
+        cache_block_stride_(cache_block_stride),
+        cache_entry_stride_(cache_entry_stride),
+        dst_entry_stride_(dst_entry_stride),
+        scale_(scale),
+        seq_starts_(seq_starts) {}
+
+  void operator()(const sycl::nd_item<1>& item) const {
+    const int32_t token_id = item.get_group(0);
+    if (token_id >= num_tokens_) return;
+
+    const int64_t batch_id = token_to_seq_[token_id];
+    const int64_t batch_start = cu_seq_lens_[batch_id];
+    const int64_t batch_end = cu_seq_lens_[batch_id + 1];
+    int32_t batch_offset = token_id - static_cast<int32_t>(batch_start);
+
+    if (token_id >= batch_end) return;
+
+    int32_t offset = 0;
+    if (seq_starts_ != nullptr) {
+      offset = seq_starts_[batch_id];
+    }
+    batch_offset += offset;
+    const int32_t block_table_id = batch_offset / block_size_;
+    const int32_t slot_id = batch_offset % block_size_;
+    const int32_t block_table_offset =
+        batch_id * block_table_stride_ + block_table_id;
+    const int32_t block_id = block_table_[block_table_offset];
+    const int64_t cache_offset =
+        block_id * cache_block_stride_ + slot_id * cache_entry_stride_;
+
+    scalar_t* dst_ptr = dst_ + token_id * dst_entry_stride_;
+    const cache_t* src_ptr = src_cache_ + cache_offset;
+
+    const int local_id = item.get_local_id(0);
+    const int local_range = item.get_local_range(0);
+
+    for (int i = local_id; i < entry_size_; i += local_range) {
+      if constexpr (kv_dt == Fp8KVCacheDataType::kAuto) {
+        dst_ptr[i] = static_cast<scalar_t>(src_ptr[i]);
+      } else if constexpr (kv_dt == Fp8KVCacheDataType::kFp8E4M3) {
+        at::Float8_e4m3fn fp8_val =
+            sycl::bit_cast<at::Float8_e4m3fn>(src_ptr[i]);
+        dst_ptr[i] =
+            static_cast<scalar_t>(static_cast<float>(fp8_val) * (*scale_));
+      } else if constexpr (kv_dt == Fp8KVCacheDataType::kFp8E5M2) {
+        at::Float8_e5m2 fp8_val = sycl::bit_cast<at::Float8_e5m2>(src_ptr[i]);
+        dst_ptr[i] =
+            static_cast<scalar_t>(static_cast<float>(fp8_val) * (*scale_));
+      }
+    }
+  }
+
+ private:
+  const cache_t* __restrict__ src_cache_;     // [NUM_BLOCKS, BLOCK_SIZE,
+                                              // ENTRIES...]
+  scalar_t* __restrict__ dst_;                // [TOT_TOKENS, ENTRIES...]
+  const int32_t* __restrict__ block_table_;   // [BATCH, BLOCK_INDICES]
+  const int32_t* __restrict__ cu_seq_lens_;   // [BATCH+1]
+  const int32_t* __restrict__ token_to_seq_;  // [MAX_TOKEN_ACROSS_CHUNKS]
+  const int32_t num_tokens_;
+  const int32_t block_size_;
+  const int32_t entry_size_;
+  const int64_t block_table_stride_;
+  const int64_t cache_block_stride_;
+  const int64_t cache_entry_stride_;
+  const int64_t dst_entry_stride_;
+  const float* __restrict__ scale_;
+  const int32_t* __restrict__ seq_starts_;  // Optional: starting offsets per
+                                            // batch
+};
+
 }  // namespace vllm
 
 // KV_T is the stored data type of kv-cache.
@@ -865,6 +965,100 @@ void gather_cache(
   }
 }
 
+// Macro to dispatch the gather_and_maybe_dequant_cache kernel.
+// SCALAR_T is the data type of the destination tensor.
+// CACHE_T is the stored data type of kv-cache.
+// KV_DTYPE is the real data type of kv-cache.
+#define CALL_GATHER_AND_MAYBE_DEQUANT_CACHE(SCALAR_T, CACHE_T, KV_DTYPE) \
+  queue.submit([&](sycl::handler& cgh) {                                 \
+    cgh.parallel_for(                                                    \
+        sycl::nd_range<1>(grid * block, block),                          \
+        vllm::gather_and_maybe_dequant_cache_kernel<                     \
+            SCALAR_T,                                                    \
+            CACHE_T,                                                     \
+            KV_DTYPE>(                                                   \
+            reinterpret_cast<CACHE_T*>(src_cache.data_ptr()),            \
+            reinterpret_cast<SCALAR_T*>(dst.data_ptr()),                 \
+            block_table.data_ptr<int32_t>(),                             \
+            cu_seq_lens.data_ptr<int32_t>(),                             \
+            token_to_seq.data_ptr<int32_t>(),                            \
+            num_tokens_i32,                                              \
+            block_size,                                                  \
+            entry_size,                                                  \
+            block_table_stride,                                          \
+            cache_block_stride,                                          \
+            cache_entry_stride,                                          \
+            dst_entry_stride,                                            \
+            reinterpret_cast<const float*>(scale.data_ptr()),            \
+            seq_starts_ptr));                                            \
+  });
+
+// Gather sequences from the cache into the destination tensor, with
+// optional FP8 dequantization.
+//  - cu_seq_lens contains the cumulative sequence lengths for each batch
+//  - block_table contains the cache block indices for each sequence
+//  - token_to_seq contains the back mapping from token_id to batch_id
+//  - Optionally, seq_starts (if provided) offsets the starting block index by
+//  seq_starts[bid]
+void gather_and_maybe_dequant_cache(
+    torch::Tensor const& src_cache,     // [NUM_BLOCKS, BLOCK_SIZE, ENTRIES...]
+    torch::Tensor const& dst,           // [TOT_TOKENS, ENTRIES...]
+    torch::Tensor const& block_table,   // [BATCH, BLOCK_INDICES]
+    torch::Tensor const& cu_seq_lens,   // [BATCH+1]
+    torch::Tensor const& token_to_seq,  // [MAX_TOKEN_ACROSS_CHUNKS]
+    int64_t num_tokens,
+    const std::string& kv_cache_dtype,
+    torch::Tensor const& scale,
+    std::optional<torch::Tensor> seq_starts) {
+  const at::DeviceGuard device_guard(src_cache.device());
+  auto& queue = vllm::xpu::vllmGetQueue();
+
+  int32_t block_size = src_cache.size(1);
+  int32_t entry_size = dst.size(-1);
+
+  TORCH_CHECK(block_table.dtype() == at::kInt, "block_table must be int32");
+  TORCH_CHECK(cu_seq_lens.dtype() == at::kInt, "cu_seq_lens must be int32");
+  TORCH_CHECK(token_to_seq.dtype() == at::kInt, "token_to_seq must be int32");
+  if (seq_starts.has_value()) {
+    TORCH_CHECK(
+        seq_starts.value().dtype() == at::kInt, "seq_starts must be int32");
+  }
+
+  TORCH_CHECK(
+      src_cache.device() == dst.device(),
+      "src_cache and dst must be on the same device");
+  TORCH_CHECK(
+      src_cache.device() == block_table.device(),
+      "src_cache and block_table must be on the same device");
+  TORCH_CHECK(
+      src_cache.device() == cu_seq_lens.device(),
+      "src_cache and cu_seq_lens must be on the same device");
+  TORCH_CHECK(
+      src_cache.device() == token_to_seq.device(),
+      "src_cache and token_to_seq must be on the same device");
+  if (seq_starts.has_value()) {
+    TORCH_CHECK(
+        src_cache.device() == seq_starts.value().device(),
+        "src_cache and seq_starts must be on the same device");
+  }
+
+  int64_t block_table_stride = block_table.stride(0);
+  int64_t cache_block_stride = src_cache.stride(0);
+  int64_t cache_entry_stride = src_cache.stride(1);
+  int64_t dst_entry_stride = dst.stride(0);
+
+  constexpr int32_t thread_block_size = 64;
+  int32_t num_tokens_i32 = static_cast<int32_t>(num_tokens);
+  sycl::range<1> grid(num_tokens_i32);
+  sycl::range<1> block(thread_block_size);
+
+  const int32_t* seq_starts_ptr =
+      seq_starts.has_value() ? seq_starts.value().data_ptr<int32_t>() : nullptr;
+
+  DISPATCH_BY_KV_CACHE_DTYPE(
+      dst.scalar_type(), kv_cache_dtype, CALL_GATHER_AND_MAYBE_DEQUANT_CACHE);
+}
+
 /**
  * @brief Swaps data blocks between source and destination tensors for KV cache
  * offloading.
@@ -984,59 +1178,70 @@ void swap_blocks(
 
 namespace vllm {
 
-// Kernel for FP8 conversion
-// Converts between FP8 and FP16/BF16/FP32 formats with scaling
-template <typename scalar_t, typename cache_t, Fp8KVCacheDataType kv_dt>
+// Kernel for FP8 conversion (matches CUDA convert_fp8_kernel pattern).
+// Converts between FP8 and FP16/BF16/FP32 formats with scaling.
+// Grid: (num_blocks), each work-group iterates over block_stride elements.
+template <typename Tout, typename Tin, Fp8KVCacheDataType kv_dt>
 class convert_fp8_kernel {
  public:
   convert_fp8_kernel(
-      cache_t* __restrict__ dst,
-      const scalar_t* __restrict__ src,
+      const Tin* __restrict__ src_cache,
+      Tout* __restrict__ dst_cache,
       const float scale,
-      const int64_t numel)
-      : dst_(dst), src_(src), scale_(scale), numel_(numel) {}
+      const int64_t block_stride)
+      : src_cache_(src_cache),
+        dst_cache_(dst_cache),
+        scale_(scale),
+        block_stride_(block_stride) {}
 
   void operator()(const sycl::nd_item<1>& item) const {
-    const int64_t idx = item.get_global_id(0);
-    if (idx >= numel_) return;
-
-    if constexpr (kv_dt == Fp8KVCacheDataType::kAuto) {
-      // Dequantize: FP8 -> FP16/BF16/FP32
-      // In this case, cache_t is the output type (FP16/BF16/FP32)
-      // and scalar_t is the input type (FP8)
-      dst_[idx] = static_cast<cache_t>(static_cast<float>(src_[idx]) * scale_);
-    } else {
-      // Quantize: FP16/BF16/FP32 -> FP8 E5M2/FP8 E4M3
-      using out_dtype = std::conditional_t<
-          kv_dt == Fp8KVCacheDataType::kFp8E5M2,
-          at::Float8_e5m2,
-          at::Float8_e4m3fn>;
-      float fp8_max = vllm::fp8::quant_type_max_v<out_dtype>;
-      float x = static_cast<float>(src_[idx]) / scale_;
-      x = sycl::fmax(-fp8_max, sycl::fmin(x, fp8_max));
-      auto fp8_val = static_cast<out_dtype>(x);
-      dst_[idx] = sycl::bit_cast<cache_t>(fp8_val);
+    const int64_t block_idx = item.get_group(0);
+    for (int i = item.get_local_id(0); i < block_stride_;
+         i += item.get_local_range(0)) {
+      const int64_t idx = block_idx * block_stride_ + i;
+      if constexpr (kv_dt == Fp8KVCacheDataType::kAuto) {
+        dst_cache_[idx] =
+            static_cast<Tout>(static_cast<float>(src_cache_[idx]) * scale_);
+      } else {
+        using fp8_dtype = std::conditional_t<
+            kv_dt == Fp8KVCacheDataType::kFp8E5M2,
+            at::Float8_e5m2,
+            at::Float8_e4m3fn>;
+        if constexpr (sizeof(Tin) == 1 && sizeof(Tout) > 1) {
+          // Dequantize: FP8 (stored as uint8_t) -> FP16/BF16/FP32
+          fp8_dtype fp8_val = sycl::bit_cast<fp8_dtype>(src_cache_[idx]);
+          dst_cache_[idx] =
+              static_cast<Tout>(static_cast<float>(fp8_val) * scale_);
+        } else {
+          // Quantize: FP16/BF16/FP32 -> FP8 (stored as uint8_t)
+          float fp8_max = vllm::fp8::quant_type_max_v<fp8_dtype>;
+          float x = static_cast<float>(src_cache_[idx]) / scale_;
+          x = sycl::fmax(-fp8_max, sycl::fmin(x, fp8_max));
+          auto fp8_val = static_cast<fp8_dtype>(x);
+          dst_cache_[idx] = sycl::bit_cast<Tout>(fp8_val);
+        }
+      }
     }
   }
 
  private:
-  cache_t* __restrict__ dst_;
-  const scalar_t* __restrict__ src_;
+  const Tin* __restrict__ src_cache_;
+  Tout* __restrict__ dst_cache_;
   const float scale_;
-  const int64_t numel_;
+  const int64_t block_stride_;
 };
 
 }  // namespace vllm
 
-#define CALL_CONVERT_FP8_KERNEL(SCALAR_T, CACHE_T, KV_DTYPE)   \
-  queue.submit([&](sycl::handler& cgh) {                       \
-    cgh.parallel_for(                                          \
-        sycl::nd_range<1>(grid * block, block),                \
-        vllm::convert_fp8_kernel<SCALAR_T, CACHE_T, KV_DTYPE>( \
-            reinterpret_cast<CACHE_T*>(dst.data_ptr()),        \
-            reinterpret_cast<const SCALAR_T*>(src.data_ptr()), \
-            scale,                                             \
-            numel));                                           \
+#define CALL_CONVERT_FP8(Tout, Tin, KV_DTYPE)          \
+  queue.submit([&](sycl::handler& cgh) {               \
+    cgh.parallel_for(                                  \
+        sycl::nd_range<1>(grid * block, block),        \
+        vllm::convert_fp8_kernel<Tout, Tin, KV_DTYPE>( \
+            reinterpret_cast<Tin*>(src.data_ptr()),    \
+            reinterpret_cast<Tout*>(dst.data_ptr()),   \
+            scale,                                     \
+            block_stride));                            \
   });
 
 // Only for testing.
@@ -1053,17 +1258,10 @@ class convert_fp8_kernel {
  * @param scale            Scaling factor for quantization/dequantization.
  *                         For quantize: dst = src / scale
  *                         For dequantize: dst = src * scale
- * @param kv_cache_dtype   Target FP8 format: "fp8_e4m3", "fp8_e5m2", or "auto".
- *                         "auto" indicates dequantization (src is FP8, dst is
- * FP16/BF16/FP32). Other values indicate quantization (src is FP16/BF16/FP32,
- * dst is FP8).
- *
- * @throws std::runtime_error  If src/dst are not on XPU, not on the same XPU
- * device, or if dtype combination is unsupported
- *
- * @note Both tensors must reside on the same XPU device. The kernel is launched
- *       asynchronously on the default SYCL queue; synchronization is caller's
- * responsibility.
+ * @param kv_cache_dtype   Target FP8 format: "fp8_e4m3", "fp8_e5m2", or
+ *                         "auto". "auto" indicates dequantization (src is FP8,
+ *                         dst is FP16/BF16/FP32). Other values indicate
+ *                         quantization (src is FP16/BF16/FP32, dst is FP8).
  */
 void convert_fp8(
     torch::Tensor& dst,
@@ -1078,70 +1276,56 @@ void convert_fp8(
       src_device.index() == dst_device.index(),
       "src and dst must be on the same XPU");
 
-  const int64_t numel = src.numel();
-  const int threads = 256;
-  const int64_t num_blocks = (numel + threads - 1) / threads;
-
   const at::DeviceGuard device_guard(src.device());
   auto& queue = vllm::xpu::vllmGetQueue();
 
-  sycl::range<1> grid(num_blocks);
-  sycl::range<1> block(threads);
+  int64_t num_blocks = src.size(0);
+  int64_t block_stride = src.stride(0);
 
-  // Dispatch based on conversion direction
-  // If kv_cache_dtype is "auto", we're dequantizing (FP8 -> FP16/BF16/FP32)
-  // Otherwise, we're quantizing (FP16/BF16/FP32 -> FP8)
+  sycl::range<1> grid(num_blocks);
+  sycl::range<1> block(std::min(block_stride, int64_t(512)));
+
   if (kv_cache_dtype == "auto") {
-    // Dequantization: src is FP8, dst is FP16/BF16/FP32
-    if (dst.scalar_type() == at::ScalarType::Float) {
-      if (src.scalar_type() == at::ScalarType::Float8_e4m3fn) {
-        CALL_CONVERT_FP8_KERNEL(
-            at::Float8_e4m3fn, float, vllm::Fp8KVCacheDataType::kAuto);
-      } else if (src.scalar_type() == at::ScalarType::Float8_e5m2) {
-        CALL_CONVERT_FP8_KERNEL(
-            at::Float8_e5m2, float, vllm::Fp8KVCacheDataType::kAuto);
-      } else {
-        TORCH_CHECK(
-            false,
-            "Unsupported src type for dequantization: ",
-            src.scalar_type());
-      }
+    // "auto" mode: determine direction from dtype.
+    // If src is float/half/bf16 → quantize to uint8 (FP8 raw bytes).
+    // If dst is float/half/bf16 → dequantize from uint8 (FP8 raw bytes).
+    if (src.scalar_type() == at::ScalarType::Float) {
+      CALL_CONVERT_FP8(uint8_t, float, vllm::Fp8KVCacheDataType::kAuto);
+    } else if (src.scalar_type() == at::ScalarType::Half) {
+      CALL_CONVERT_FP8(uint8_t, at::Half, vllm::Fp8KVCacheDataType::kAuto);
+    } else if (src.scalar_type() == at::ScalarType::BFloat16) {
+      CALL_CONVERT_FP8(uint8_t, at::BFloat16, vllm::Fp8KVCacheDataType::kAuto);
+    } else if (dst.scalar_type() == at::ScalarType::Float) {
+      CALL_CONVERT_FP8(float, uint8_t, vllm::Fp8KVCacheDataType::kAuto);
     } else if (dst.scalar_type() == at::ScalarType::Half) {
-      if (src.scalar_type() == at::ScalarType::Float8_e4m3fn) {
-        CALL_CONVERT_FP8_KERNEL(
-            at::Float8_e4m3fn, at::Half, vllm::Fp8KVCacheDataType::kAuto);
-      } else if (src.scalar_type() == at::ScalarType::Float8_e5m2) {
-        CALL_CONVERT_FP8_KERNEL(
-            at::Float8_e5m2, at::Half, vllm::Fp8KVCacheDataType::kAuto);
-      } else {
-        TORCH_CHECK(
-            false,
-            "Unsupported src type for dequantization: ",
-            src.scalar_type());
-      }
+      CALL_CONVERT_FP8(at::Half, uint8_t, vllm::Fp8KVCacheDataType::kAuto);
     } else if (dst.scalar_type() == at::ScalarType::BFloat16) {
-      if (src.scalar_type() == at::ScalarType::Float8_e4m3fn) {
-        CALL_CONVERT_FP8_KERNEL(
-            at::Float8_e4m3fn, at::BFloat16, vllm::Fp8KVCacheDataType::kAuto);
-      } else if (src.scalar_type() == at::ScalarType::Float8_e5m2) {
-        CALL_CONVERT_FP8_KERNEL(
-            at::Float8_e5m2, at::BFloat16, vllm::Fp8KVCacheDataType::kAuto);
-      } else {
-        TORCH_CHECK(
-            false,
-            "Unsupported src type for dequantization: ",
-            src.scalar_type());
-      }
+      CALL_CONVERT_FP8(at::BFloat16, uint8_t, vllm::Fp8KVCacheDataType::kAuto);
     } else {
       TORCH_CHECK(
-          false,
-          "Unsupported dst type for dequantization: ",
-          dst.scalar_type());
+          false, "Unsupported data type combination for auto convert_fp8");
+    }
+  } else if (kv_cache_dtype == "fp8" || kv_cache_dtype == "fp8_e4m3") {
+    if (src.scalar_type() == at::ScalarType::Float) {
+      CALL_CONVERT_FP8(uint8_t, float, vllm::Fp8KVCacheDataType::kFp8E4M3);
+    } else if (src.scalar_type() == at::ScalarType::Half) {
+      CALL_CONVERT_FP8(uint8_t, at::Half, vllm::Fp8KVCacheDataType::kFp8E4M3);
+    } else if (src.scalar_type() == at::ScalarType::BFloat16) {
+      CALL_CONVERT_FP8(
+          uint8_t, at::BFloat16, vllm::Fp8KVCacheDataType::kFp8E4M3);
+    } else if (dst.scalar_type() == at::ScalarType::Float) {
+      CALL_CONVERT_FP8(float, uint8_t, vllm::Fp8KVCacheDataType::kFp8E4M3);
+    } else if (dst.scalar_type() == at::ScalarType::Half) {
+      CALL_CONVERT_FP8(at::Half, uint8_t, vllm::Fp8KVCacheDataType::kFp8E4M3);
+    } else if (dst.scalar_type() == at::ScalarType::BFloat16) {
+      CALL_CONVERT_FP8(
+          at::BFloat16, uint8_t, vllm::Fp8KVCacheDataType::kFp8E4M3);
+    } else {
+      TORCH_CHECK(
+          false, "Unsupported data type combination for fp8_e4m3 convert_fp8");
     }
   } else {
-    // Quantization: src is FP16/BF16/FP32, dst is FP8
-    DISPATCH_BY_KV_CACHE_DTYPE(
-        src.scalar_type(), kv_cache_dtype, CALL_CONVERT_FP8_KERNEL);
+    TORCH_CHECK(false, "Unsupported data type: ", kv_cache_dtype);
   }
 }
 #define CALL_INDEXER_K_QUANT_AND_CACHE(KV_T, CACHE_T, KV_DTYPE)          \
