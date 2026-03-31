@@ -132,6 +132,14 @@ void swigluoai_and_mul(
 
 torch::Tensor get_xpu_view_from_cpu_tensor(torch::Tensor& cpu_tensor);
 
+void merge_attn_states(
+    torch::Tensor& output,
+    std::optional<torch::Tensor> output_lse,
+    const torch::Tensor& prefix_output,
+    const torch::Tensor& prefix_lse,
+    const torch::Tensor& suffix_output,
+    const torch::Tensor& suffix_lse);
+
 // Just for unittest
 void convert_fp8(
     torch::Tensor& dst,
