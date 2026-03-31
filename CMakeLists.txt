@@ -411,7 +411,8 @@ if(BASIC_KERNELS_ENABLED)
       "csrc/xpu_view.cpp"
       "csrc/tensor_utils.cpp"
       "csrc/utils/mem_cpy.cpp"
-      "csrc/topk_per_row.cpp")
+      "csrc/topk_per_row.cpp"
+      "csrc/sampler.cpp")
   include_directories("/usr/include")
 
   define_gpu_extension_target(

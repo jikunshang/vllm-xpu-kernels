@@ -136,6 +136,13 @@ TORCH_LIBRARY_EXPAND(TORCH_EXTENSION_NAME, ops) {
       "xpu_memcpy_sync(int dst_ptr, int src_ptr, int n_bytes, int kind, "
       "int device=-1) -> ()");
   ops.impl("xpu_memcpy_sync", &xpu_memcpy_sync);
+
+  // Apply repetition penalties to logits in-place
+  ops.def(
+      "apply_repetition_penalties_(Tensor! logits, Tensor prompt_mask, "
+      "Tensor output_mask, Tensor repetition_penalties) -> ()");
+  ops.impl(
+      "apply_repetition_penalties_", torch::kXPU, &apply_repetition_penalties_);
 }
 
 TORCH_LIBRARY_EXPAND(CONCAT(TORCH_EXTENSION_NAME, _cache_ops), cache_ops) {

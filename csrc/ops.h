@@ -160,3 +160,9 @@ void xpu_memcpy_sync(
     int64_t n_bytes,
     int64_t kind,
     int64_t device = -1);
+
+void apply_repetition_penalties_(
+    torch::Tensor& logits,
+    const torch::Tensor& prompt_mask,
+    const torch::Tensor& output_mask,
+    const torch::Tensor& repetition_penalties);
