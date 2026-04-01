@@ -24,7 +24,7 @@ TORCH_LIBRARY_EXPAND(TORCH_EXTENSION_NAME, ops) {
   ops.def(
       // FIXME: torch op check consider input & weight is mutable in some ut
       // cases. so we make it mutable here.
-      "rms_norm(Tensor! result, Tensor! input, Tensor! weight, float epsilon) "
+      "rms_norm(Tensor! result, Tensor input, Tensor weight, float epsilon) "
       "-> "
       "()");
   ops.impl("rms_norm", torch::kXPU, &rms_norm);
