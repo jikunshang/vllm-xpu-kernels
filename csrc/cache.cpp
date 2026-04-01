@@ -609,7 +609,6 @@ class cp_gather_indexer_k_quant_cache_kernel {
   int quant_block_size_;
 };
 
-
 // grid is launched with dimensions (num_tokens)
 template <typename scalar_t, typename cache_t, Fp8KVCacheDataType kv_dt>
 class gather_and_maybe_dequant_cache_kernel {
