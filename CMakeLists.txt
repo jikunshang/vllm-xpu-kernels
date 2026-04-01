@@ -187,8 +187,9 @@ if(VLLM_GPU_LANG STREQUAL "SYCL")
   set(SYCL_LINK_FLAGS "")
   list(APPEND SYCL_LINK_FLAGS "-fsycl")
   set(SYCL_DEVICE_LINK_FLAGS ${SYCL_LINK_FLAGS})
-  set(SYCL_DEVICE_LINK_FLAGS ${SYCL_DEVICE_LINK_FLAGS}
-                             -fsycl-max-parallel-link-jobs=16)
+  set(SYCL_DEVICE_LINK_FLAGS
+      ${SYCL_DEVICE_LINK_FLAGS} -fsycl-max-parallel-link-jobs=16
+      -flink-huge-device-code)
   set(SYCL_DEVICE_LINK_FLAGS
       ${SYCL_DEVICE_LINK_FLAGS}
       "-Xspirv-translator;-spirv-ext=+SPV_INTEL_split_barrier,+SPV_INTEL_2d_block_io,+SPV_INTEL_subgroup_matrix_multiply_accumulate"
@@ -306,6 +307,7 @@ if(BUILD_SYCL_TLA_KERNELS)
 
   set(SYCL_TLA_KERNELS_COMPILE_FLAGS ${VLLM_GPU_COMPILE_FLAGS})
   list(APPEND SYCL_TLA_KERNELS_COMPILE_FLAGS ${VLLM_CUTLASS_FLAGS})
+  list(APPEND SYCL_TLA_KERNELS_COMPILE_FLAGS "-fno-sycl-instrument-device-code")
 
   # compile static library for attn and grouped_gemm, link this library to vLLM
   # extensions shared library
@@ -476,7 +478,9 @@ if(XPU_SPECIFIC_KERNELS_ENABLED)
       "csrc/xpu/torch_bindings.cpp"
       "csrc/xpu/lora/lora_shrink.cpp"
       "csrc/xpu/lora/lora_expand.cpp"
+      "csrc/xpu/sampler/topk_topp_sampler.cpp"
       "csrc/xpu/sycl/deepseek_scaling_rope.cpp"
+      "csrc/xpu/rand/exponential.cpp"
       "csrc/xpu/grouped_gemm/grouped_gemm_interface.cpp"
       "csrc/xpu/utils.cpp"
       "csrc/xpu/gdn_attn/gdn_attn_interface.cpp")
