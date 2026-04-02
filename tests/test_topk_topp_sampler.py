@@ -13,6 +13,17 @@ K = [1, 32, 128, 1024, None]
 P = [0.1, 0.2, 0.4, 0.8, 1.0, None]
 LOGPROBS_MODE = ["raw_logits", "processed_logits", "processed_logprobs"]
 
+# CI/mini scope parameter overrides
+MINI_PYTEST_PARAMS = {
+    "default": {
+        "batch_size": [1, 32],
+        "vocab_size": [1024],
+        "k": [1, 128, None],
+        "p": [0.5, None],
+        "logprobs_mode": ["raw_logits"],
+    },
+}
+
 
 @pytest.mark.parametrize("batch_size", BATCH_SIZE)
 @pytest.mark.parametrize("vocab_size", VOCAB_SIZE)
