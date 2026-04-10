@@ -10,7 +10,7 @@ Setting a function entry to ``None`` skips that test entirely.
 Setting it to ``{}`` runs the test with original (full) parameters.
 
 Example usage:
-    XPU_KERNEL_TEST_SCOPE=ondemand:llama pytest -v -s tests/
+    XPU_KERNEL_TEST_SCOPE=ondemand:llama3 pytest -v -s tests/
 
 To add a new profile:
     1. Add a new key to ONDEMAND_PROFILES
@@ -86,23 +86,23 @@ _LLAMA3_PROFILE = {
              (128, LLAMA3_HIDDEN_SIZE, LLAMA3_INTERMEDIATE_SIZE)],
         },
     },
-    "tests/flash_attn/test_flash_attn_varlen_func.py": {
-        "test_varlen_with_paged_kv": {
-            "seq_lens": [[(1, 1328), (5, 18), (129, 463)]],
-            "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
-            "head_size": [LLAMA3_HEAD_SIZE],
-            "num_blocks": [2048],
-            "window_size": [(-1, -1)],
-            "is_paged": [True],
-        },
-        "test_decode_with_paged_kv": {
-            "seq_lens": [[(1, 1025), (1, 523), (1, 37)]],
-            "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
-            "head_size": [LLAMA3_HEAD_SIZE],
-            "num_blocks": [2048],
-            "window_size": [(-1, -1)],
-        },
-    },
+    # "tests/flash_attn/test_flash_attn_varlen_func.py": {
+    #     "test_varlen_with_paged_kv": {
+    #         "seq_lens": [[(1, 1)]],
+    #         "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
+    #         "head_size": [LLAMA3_HEAD_SIZE],
+    #         "num_blocks": [2048],
+    #         "window_size": [(-1, -1)],
+    #         "is_paged": [True],
+    #     },
+    #     "test_decode_with_paged_kv": {
+    #         "seq_lens": [[(1, 1)]],
+    #         "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
+    #         "head_size": [LLAMA3_HEAD_SIZE],
+    #         "num_blocks": [2048],
+    #         "window_size": [(-1, -1)],
+    #     },
+    # },
 }
 
 LLAMA4_HEAD_SIZE = 128

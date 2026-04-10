@@ -149,6 +149,36 @@ MINI_PYTEST_PARAMS = {
     }
 }
 
+# New multi-scope system (takes priority over MINI_PYTEST_PARAMS when defined)
+TEST_SCOPE_PARAMS = {
+    "ci": {
+        "default": {},
+    },
+    "mini": {
+        "test_varlen_with_paged_kv": {
+            "seq_lens": [[(1, 1328), (5, 18), (129, 463)]],
+            "head_size": [64, 128],
+            "num_heads": [(8, 2)],
+            "num_blocks": [64],
+            "window_size": [(-1, -1), (127, 127)],
+            "is_paged": [True]
+        },
+        "test_decode_with_paged_kv": {
+            "seq_lens": [[(1, 1025), (1, 523), (1, 37)]],
+            "num_heads": [(8, 2)],
+            "head_size": [64, 128],
+            "num_blocks": [64],
+            "window_size": [(-1, -1), (127, -1)],
+        },
+        "test_decode_with_paged_kv_mla": {
+            "seq_lens": [[(1, 1025), (1, 523), (1, 37)]],
+            "num_heads": [(8, 1)],
+            "head_size_kv": [(192, 128)],
+            "num_blocks": [2048],
+        }
+    },
+}
+
 
 @pytest.mark.parametrize("seq_lens", [[(1, 1328), (5, 18), (129, 463)]])
 @pytest.mark.parametrize("num_heads", NUM_HEADS)
