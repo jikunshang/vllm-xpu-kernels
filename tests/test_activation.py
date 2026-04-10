@@ -23,19 +23,6 @@ MINI_PYTEST_PARAMS = {
     },
 }
 
-# New multi-scope system (takes priority over MINI_PYTEST_PARAMS when defined)
-TEST_SCOPE_PARAMS = {
-    "ci": {
-        "default": {},
-    },
-    "mini": {
-        "default": {
-            "num_tokens": [1],
-            "d": [128],
-        },
-    },
-}
-
 
 @pytest.mark.parametrize("activation",
                          ["silu_and_mul", "mul_and_silu", "gelu", "gelu_tanh"])

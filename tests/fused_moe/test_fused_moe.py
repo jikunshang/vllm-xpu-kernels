@@ -22,14 +22,15 @@ TOP_KS = [1]
 EP_RANK = [0, 1, 2, 3]
 EP_SIZE = [4]
 
+# override pytest parameters when enable mini pytest
 MINI_PYTEST_PARAMS = {
     "default": {
         "m,n,k": [(1, 256, 128)],
         "e": [2],
         "topk": [1],
         "dtype": [torch.bfloat16],
-        "has_bias": [True]
-    }
+        "has_bias": [True],
+    },
 }
 
 

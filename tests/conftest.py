@@ -31,18 +31,16 @@ def _resolve_scope_params(module, func_name, scope):
     """Resolve parameter overrides for the given scope.
 
     Lookup order:
-      1. TEST_SCOPE_PARAMS[scope][func_name]
-      2. TEST_SCOPE_PARAMS[scope]["default"]
-      3. (legacy fallback for ci/mini) MINI_PYTEST_PARAMS[func_name]
-      4. (legacy fallback for ci/mini) MINI_PYTEST_PARAMS["default"]
+    1. ondemand: profile-defined function entry or default entry
+    2. mini: MINI_PYTEST_PARAMS[func_name]
+    3. mini: MINI_PYTEST_PARAMS["default"]
+    4. ci/full: use original test parameters
 
     Returns:
       - dict of {param_name: values} to override, or
       - None to skip this test entirely (when the entry is explicitly None)
       - empty dict {} to run with original params (no override)
     """
-    # --- New system: TEST_SCOPE_PARAMS ---
-    scope_params = getattr(module, "TEST_SCOPE_PARAMS", {})
     if scope.startswith("ondemand:"):
         # On-demand profiles are loaded from tests/test_scope_profiles.py
         # Support both "ondemand:llama" and "ondemand::llama"
@@ -61,17 +59,13 @@ def _resolve_scope_params(module, func_name, scope):
         return None  # module not in profile → skip
 
     scope_key = scope  # "ci" or "mini"
-    if scope_key in scope_params:
-        scope_dict = scope_params[scope_key]
-        entry = scope_dict.get(func_name)
-        if entry is not None:
-            return entry
-        entry = scope_dict.get("default")
-        if entry is not None:
-            return entry
 
-    # --- Legacy fallback: MINI_PYTEST_PARAMS (for ci and mini) ---
-    if scope_key in ("ci", "mini"):
+    # ci scope always uses the original/default parametrization.
+    if scope_key == "ci":
+        return {}
+
+    # mini scope always uses the current file's MINI_PYTEST_PARAMS.
+    if scope_key == "mini":
         legacy = getattr(module, "MINI_PYTEST_PARAMS", {})
         entry = legacy.get(func_name)
         if entry is not None:
