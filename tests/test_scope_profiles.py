@@ -86,23 +86,23 @@ _LLAMA3_PROFILE = {
              (128, LLAMA3_HIDDEN_SIZE, LLAMA3_INTERMEDIATE_SIZE)],
         },
     },
-    # "tests/flash_attn/test_flash_attn_varlen_func.py": {
-    #     "test_varlen_with_paged_kv": {
-    #         "seq_lens": [[(1, 1)]],
-    #         "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
-    #         "head_size": [LLAMA3_HEAD_SIZE],
-    #         "num_blocks": [2048],
-    #         "window_size": [(-1, -1)],
-    #         "is_paged": [True],
-    #     },
-    #     "test_decode_with_paged_kv": {
-    #         "seq_lens": [[(1, 1)]],
-    #         "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
-    #         "head_size": [LLAMA3_HEAD_SIZE],
-    #         "num_blocks": [2048],
-    #         "window_size": [(-1, -1)],
-    #     },
-    # },
+    "tests/flash_attn/test_flash_attn_varlen_func.py": {
+        "test_varlen_with_paged_kv": {
+            "seq_lens": [[(1, 1)]],
+            "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
+            "head_size": [LLAMA3_HEAD_SIZE],
+            "num_blocks": [2048],
+            "window_size": [(-1, -1)],
+            "is_paged": [True],
+        },
+        "test_decode_with_paged_kv": {
+            "seq_lens": [[(1, 1)]],
+            "num_heads": [(LLAMA3_NUM_HEADS, LLAMA3_NUM_KV_HEADS)],
+            "head_size": [LLAMA3_HEAD_SIZE],
+            "num_blocks": [2048],
+            "window_size": [(-1, -1)],
+        },
+    },
 }
 
 LLAMA4_HEAD_SIZE = 128
