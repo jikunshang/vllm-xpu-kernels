@@ -63,7 +63,7 @@ On-demand profiles are defined centrally in `tests/test_scope_profiles.py`. Each
 
 ```python
 ONDEMAND_PROFILES = {
-    "llama": {
+    "llama3": {
         "tests/test_activation.py": {
             "test_act_and_mul": {
                 "num_tokens": [1, 128],

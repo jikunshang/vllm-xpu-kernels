@@ -43,7 +43,7 @@ def _resolve_scope_params(module, func_name, scope):
     """
     if scope.startswith("ondemand:"):
         # On-demand profiles are loaded from tests/test_scope_profiles.py
-        # Support both "ondemand:llama" and "ondemand::llama"
+        # Support both "ondemand:llama3" and "ondemand::llama3"
         profile_name = scope.split(":", 1)[1].lstrip(":")
         try:
             from tests.test_scope_profiles import ONDEMAND_PROFILES
