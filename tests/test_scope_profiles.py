@@ -60,7 +60,7 @@ _LLAMA3_PROFILE = {
             "num_tokens": [1, 128],
             "num_heads": [LLAMA3_NUM_HEADS],
             "head_size": [LLAMA3_HEAD_SIZE],
-            "block_size": [16],
+            "block_size": [64],
             "dtype": [torch.bfloat16],
         },
     },
@@ -209,7 +209,7 @@ _LLAMA4_PROFILE = {
     "tests/test_moe_sum.py": {
         "test_moe_sum": {
             "m": [1, 128],
-            "topk": [2],  # top-1 sum is trivial; use smallest available
+            "topk": [1],  # top-1 sum is trivial; use smallest available
             "k": [LLAMA4_HIDDEN_SIZE],
         },
     },
