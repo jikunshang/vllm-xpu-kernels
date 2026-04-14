@@ -27,13 +27,14 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Intended Audience :: Developers",
     "Intended Audience :: Information Technology",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
-requires-python = ">=3.9,<3.13"
+requires-python = ">=3.9,<3.14"
 dynamic = [ "version", "dependencies", "optional-dependencies"]
 
 [project.urls]
@@ -42,7 +43,8 @@ Documentation="https://docs.vllm.ai/en/latest/"
 
 
 [tool.setuptools_scm]
-# no extra settings needed, presence enables setuptools-scm
+tag_regex = '^(?:[\w-]+-)?(?P<version>[vV]?\d+(?:\.\d+)*(?:[._-]?(?:dev|a|b|rc|alpha|beta)\d*)?)$'
+git_describe_command = "git describe --dirty --tags --long --match 'v*'"
 
 [tool.setuptools]
 [tool.setuptools.packages.find]
@@ -106,12 +108,6 @@ files = [
     "vllm/transformers_utils",
     "vllm/triton_utils",
     "vllm/usage",
-]
-# TODO(woosuk): Include the code from Megatron and HuggingFace.
-exclude = [
-    "vllm/model_executor/parallel_utils/|vllm/model_executor/models/",
-    # Ignore triton kernels in ops.
-    'vllm/attention/ops/.*\.py$'
 ]
 
 [tool.codespell]

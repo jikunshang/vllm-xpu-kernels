@@ -454,6 +454,10 @@ package_data = {
     ]
 }
 
+_SCM_TAG_REGEX = (r'^(?:[\w-]+-)?'
+                   r'(?P<version>[vV]?\d+(?:\.\d+)*'
+                   r'(?:[._-]?(?:dev|a|b|rc|alpha|beta)\d*)?)$')
+_SCM_DESCRIBE_CMD = "git describe --dirty --tags --long --match 'v*'"
 
 def get_vllm_version() -> str:
     # Allow overriding the version.
@@ -462,7 +466,11 @@ def get_vllm_version() -> str:
         os.environ["SETUPTOOLS_SCM_PRETEND_VERSION"] = env_version
         return get_version(write_to="_version.py")
 
-    version = get_version(write_to="_version.py")
+    version = get_version(
+        write_to="_version.py",
+        git_describe_command=_SCM_DESCRIBE_CMD,
+        tag_regex=_SCM_TAG_REGEX,
+    )
 
     return version
 
