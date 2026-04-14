@@ -6,11 +6,6 @@ default_stages:
   - manual # Run in CI
 exclude: 'vllm/third_party/.*'
 repos:
-# - repo: https://github.com/google/yapf
-#   rev: v0.43.0
-#   hooks:
-#   - id: yapf
-#     args: [--in-place, --verbose]
 - repo: https://github.com/astral-sh/ruff-pre-commit
   rev: v0.11.7
   hooks:
@@ -64,13 +59,6 @@ repos:
       files: ^requirements/test\.(in|txt)$
 - repo: local
   hooks:
-  - id: yapf
-    name: yapf
-    entry: yapf
-    language: python
-    types: [python]
-    additional_dependencies: [yapf==0.43.0]
-    args: [--in-place, --verbose]
   - id: mypy-local
     name: Run mypy for local Python installation
     entry: tools/mypy.sh 0 "local"

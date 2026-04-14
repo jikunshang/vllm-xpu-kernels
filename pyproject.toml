@@ -49,14 +49,6 @@ Documentation="https://docs.vllm.ai/en/latest/"
 where = ["."]
 include = ["vllm_xpu_kernels*"]
 
-[tool.yapfignore]
-ignore_patterns = [
-    ".buildkite/**",
-    "benchmarks/**",
-    "build/**",
-    "examples/**",
-]
-
 [tool.ruff]
 # Allow lines to be as long as 80.
 line-length = 80
