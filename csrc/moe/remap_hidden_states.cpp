@@ -13,8 +13,8 @@ class RowsPerExpertCount {
       int64_t* expert_first_token_offset,
       int64_t* topk_ids,
       int* unpermuted_row_to_permuted_row,
-      const int num_rows,
-      const int TopK)
+      const size_t num_rows,
+      const size_t TopK)
       : expert_map(expert_map),
         expert_first_token_offset(expert_first_token_offset),
         topk_ids(topk_ids),
