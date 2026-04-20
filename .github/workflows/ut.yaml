@@ -43,9 +43,9 @@ jobs:
       - name: build docker image & push to local
         id: build-image
         run: |
-          docker build -t xpu-kernel-ci-image:latest -f Dockerfile.xpu .
-          docker tag xpu-kernel-ci-image:latest ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
-          docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
+          docker build -t xpu-kernel-ci-image:test-212 -f Dockerfile.xpu .
+          docker tag xpu-kernel-ci-image:test-212 ${{ env.REGISTRY }}/xpu-kernel-ci-image:test-212
+          docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:test-212
 
   build-docker-image-latest-bmg:
     runs-on: self-hosted-bmg
@@ -65,16 +65,16 @@ jobs:
       - name: build docker image & push to local
         id: build-image
         run: |
-          docker build -t xpu-kernel-ci-image:latest -f Dockerfile.xpu .
-          docker tag xpu-kernel-ci-image:latest ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
-          docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:latest
+          docker build -t xpu-kernel-ci-image:test-212 -f Dockerfile.xpu .
+          docker tag xpu-kernel-ci-image:test-212 ${{ env.REGISTRY }}/xpu-kernel-ci-image:test-212
+          docker push ${{ env.REGISTRY }}/xpu-kernel-ci-image:test-212
 
   run-unit-tests-pvc:
     runs-on: self-hosted-pvc
     needs: build-docker-image-latest-pvc
     timeout-minutes: 40
     container:                      
-      image: localhost:5000/xpu-kernel-ci-image:latest
+      image: localhost:5000/xpu-kernel-ci-image:test-212
       options: --device /dev/dri -v /dev/dri/by-path:/dev/dri/by-path --privileged -v ccache:/root/.ccache -e CCACHE_DIR=/root/.ccache
     steps:
       - name: Checkout
@@ -99,20 +99,22 @@ jobs:
 
       - name: print wheel size
         run: |
-          ls -lh dist/*.whl
+          find dist -name '*.whl' -exec ls -lh {} +
 
       - name: report wheel size
         run: |
-          WHEEL_NAME=$(basename dist/*.whl)
-          WHEEL_SIZE=$(ls -lh dist/*.whl | awk '{print $5}')
-          echo "### PVC Wheel Size" >> $GITHUB_STEP_SUMMARY
-          echo "| Wheel | Size |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|------|" >> $GITHUB_STEP_SUMMARY
-          echo "| \`${WHEEL_NAME}\` | **${WHEEL_SIZE}** |" >> $GITHUB_STEP_SUMMARY
+          WHEEL_NAME=$(find dist -name '*.whl' -printf '%f\n' | head -1)
+          WHEEL_SIZE=$(find dist -name '*.whl' -exec stat --format='%s' {} + | awk '{printf "%.2f MB", $1/1024/1024}')
+          {
+            echo "### PVC Wheel Size"
+            echo "| Wheel | Size |"
+            echo "|-------|------|"
+            echo "| \`${WHEEL_NAME}\` | **${WHEEL_SIZE}** |"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: install wheel
         run: |
-          VLLM_USE_PRECOMPILED=1 VLLM_PRECOMPILED_WHEEL_LOCATION=$(ls dist/*.whl) uv pip install --no-build-isolation -e . -v
+          VLLM_USE_PRECOMPILED=1 VLLM_PRECOMPILED_WHEEL_LOCATION=$(find dist -name '*.whl' -print -quit) uv pip install --no-build-isolation -e . -v
 
       - name: test 
         run: |
@@ -135,7 +137,7 @@ jobs:
     needs: build-docker-image-latest-bmg
     timeout-minutes: 40
     container: 
-      image: localhost:5000/xpu-kernel-ci-image:latest
+      image: localhost:5000/xpu-kernel-ci-image:test-212
       options: --device /dev/dri -v /dev/dri/by-path:/dev/dri/by-path --privileged -v ccache:/root/.ccache -e CCACHE_DIR=/root/.ccache
     steps:
       - name: Checkout
@@ -160,20 +162,22 @@ jobs:
 
       - name: print wheel size
         run: |
-          ls -lh dist/*.whl
+          find dist -name '*.whl' -exec ls -lh {} +
 
       - name: report wheel size
         run: |
-          WHEEL_NAME=$(basename dist/*.whl)
-          WHEEL_SIZE=$(ls -lh dist/*.whl | awk '{print $5}')
-          echo "### BMG Wheel Size" >> $GITHUB_STEP_SUMMARY
-          echo "| Wheel | Size |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|------|" >> $GITHUB_STEP_SUMMARY
-          echo "| \`${WHEEL_NAME}\` | **${WHEEL_SIZE}** |" >> $GITHUB_STEP_SUMMARY
+          WHEEL_NAME=$(find dist -name '*.whl' -printf '%f\n' | head -1)
+          WHEEL_SIZE=$(find dist -name '*.whl' -exec stat --format='%s' {} + | awk '{printf "%.2f MB", $1/1024/1024}')
+          {
+            echo "### BMG Wheel Size"
+            echo "| Wheel | Size |"
+            echo "|-------|------|"
+            echo "| \`${WHEEL_NAME}\` | **${WHEEL_SIZE}** |"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: install wheel
         run: |
-          VLLM_USE_PRECOMPILED=1 VLLM_PRECOMPILED_WHEEL_LOCATION=$(ls dist/*.whl) uv pip install --no-build-isolation -e . -v
+          VLLM_USE_PRECOMPILED=1 VLLM_PRECOMPILED_WHEEL_LOCATION=$(find dist -name '*.whl' -print -quit) uv pip install --no-build-isolation -e . -v
 
       - name: test 
         run: |
