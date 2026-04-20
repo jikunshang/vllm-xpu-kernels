@@ -1,7 +1,7 @@
 {
     "_comment": "GPU compute runtime package configurations. Each profile is a named list of .deb URLs to download and install. Use GPU_RUNTIME_PROFILE build-arg to select one.",
 
-    "default": "igc-2.20.5-cr-25.40",
+    "default": "igc-2.32.7-cr-26.14",
 
     "profiles": {
         "igc-2.11.7-cr-25.18": {
@@ -74,6 +74,18 @@
                 "https://github.com/intel/compute-runtime/releases/download/26.05.37020.3/libigdgmm12_22.9.0_amd64.deb",
                 "https://github.com/intel/compute-runtime/releases/download/26.05.37020.3/libze-intel-gpu1_26.05.37020.3-0_amd64.deb",
                 "https://github.com/oneapi-src/level-zero/releases/download/v1.27.0/level-zero_1.27.0+u24.04_amd64.deb"
+            ]
+        },
+        "igc-2.32.7-cr-26.14": {
+            "description": "IGC 2.32.7 + Compute Runtime 26.14.37833.4 + Level Zero v1.28.2",
+            "packages": [
+                "https://github.com/intel/intel-graphics-compiler/releases/download/v2.32.7/intel-igc-core-2_2.32.7+21184_amd64.deb",
+                "https://github.com/intel/intel-graphics-compiler/releases/download/v2.32.7/intel-igc-opencl-2_2.32.7+21184_amd64.deb",
+                "https://github.com/intel/compute-runtime/releases/download/26.14.37833.4/intel-ocloc_26.14.37833.4-0_amd64.deb",
+                "https://github.com/intel/compute-runtime/releases/download/26.14.37833.4/intel-opencl-icd_26.14.37833.4-0_amd64.deb",
+                "https://github.com/intel/compute-runtime/releases/download/26.14.37833.4/libigdgmm12_22.9.0_amd64.deb",
+                "https://github.com/intel/compute-runtime/releases/download/26.14.37833.4/libze-intel-gpu1_26.14.37833.4-0_amd64.deb",
+                "https://github.com/oneapi-src/level-zero/releases/download/v1.28.2/level-zero_1.28.2+u24.04_amd64.deb"
             ]
         }
     }
