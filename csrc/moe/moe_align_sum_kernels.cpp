@@ -320,7 +320,7 @@ void _moe_align_block_size_small_batch_expert(
   int32_t* tokens_cnts = cumsum + num_experts + 1;
 
   if (local_id_x >= fill_threads) {
-    for (int i = 0; i < num_experts; ++i) {
+    for (size_t i = 0; i < static_cast<size_t>(num_experts); ++i) {
       tokens_cnts[(tid + 1) * num_experts + i] = 0;
     }
   }
@@ -356,7 +356,7 @@ void _moe_align_block_size_small_batch_expert(
   if (local_id_x >= fill_threads) {
     if (tid == 0) {
       cumsum[0] = 0;
-      for (int i = 1; i <= num_experts; ++i) {
+      for (size_t i = 1; i <= static_cast<size_t>(num_experts); ++i) {
         cumsum[i] =
             cumsum[i - 1] +
             CEILDIV(tokens_cnts[stride * num_experts + i - 1], block_size) *
