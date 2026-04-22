@@ -501,6 +501,7 @@ _QWEN3_30B_A3B_PROFILE = {
         "test_remap_hidden_states": {
             "total_experts_num": [QWEN3_30B_NUM_EXPERTS],
             "topk": [QWEN3_30B_TOPK],
+            "hidden_size": [QWEN3_30B_HIDDEN_SIZE],
         },
     },
     # ---- MoE align block size ----
@@ -690,6 +691,7 @@ _QWEN3_235B_A22B_PROFILE = {
         "test_remap_hidden_states": {
             "total_experts_num": [QWEN3_235B_NUM_EXPERTS],
             "topk": [QWEN3_235B_TOPK],
+            "hidden_size": [QWEN3_235B_HIDDEN_SIZE],
         },
     },
     # ---- MoE align block size ----
