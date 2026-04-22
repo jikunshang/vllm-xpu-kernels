@@ -203,7 +203,8 @@ void call_rotary_embedding_kernel(
 
   // Make sure query and key have consistent number of heads
   size_t num_heads = query_hidden_size / head_size;
-  size_t num_kv_heads = key.has_value() ? key_hidden_size / head_size : num_heads;
+  size_t num_kv_heads =
+      key.has_value() ? key_hidden_size / head_size : num_heads;
   TORCH_CHECK(num_heads % num_kv_heads == 0);
 
   size_t rot_dim = cos_sin_cache.size(1);

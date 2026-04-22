@@ -646,7 +646,8 @@ void call_fused_add_rms_norm_static_fp8_quant_kernel(
 
   // Dispatch VEC_SIZE = gcd(16 / sizeof(sycl_t), hidden_size) matching CUDA.
   // Also require input_stride % vec_size == 0 for safe vectorized input reads.
-  size_t vec_size = std::gcd(static_cast<size_t>(16 / sizeof(sycl_t)), hidden_size);
+  size_t vec_size =
+      std::gcd(static_cast<size_t>(16 / sizeof(sycl_t)), hidden_size);
   if (input_stride % vec_size != 0) {
     vec_size = 1;
   }

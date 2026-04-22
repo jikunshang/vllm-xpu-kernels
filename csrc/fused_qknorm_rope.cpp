@@ -64,7 +64,8 @@ class fused_qk_norm_rope_kernel {
     if (token_idx >= num_tokens) return;
 
     const bool is_q = local_head_idx < num_heads_q;
-    const size_t head_idx = is_q ? local_head_idx : local_head_idx - num_heads_q;
+    const size_t head_idx =
+        is_q ? local_head_idx : local_head_idx - num_heads_q;
     const size_t num_heads = num_heads_q + num_heads_k + num_heads_v;
 
     // Compute the offset into the QKV tensor for this sub-group's head.

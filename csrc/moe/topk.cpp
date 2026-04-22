@@ -562,7 +562,8 @@ class TopKGating {
     }
 
     if (renormalize) {
-      for (size_t k_idx = thread_group_idx; k_idx < k; k_idx += THREADS_PER_ROW) {
+      for (size_t k_idx = thread_group_idx; k_idx < k;
+           k_idx += THREADS_PER_ROW) {
         const size_t idx = k * thread_row + k_idx;
         output[idx] /= sum_val;
       }

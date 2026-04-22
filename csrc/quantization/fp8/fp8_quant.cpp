@@ -366,7 +366,7 @@ void static_scaled_fp8_quant(
   TORCH_CHECK(
       out.stride(-1) == 1, "last dimension of output must be contiguous");
 
-  const size_t hidden_size = input.size(-1);                 // N (columns)
+  const size_t hidden_size = input.size(-1);               // N (columns)
   const int64_t num_tokens = input.numel() / hidden_size;  // M (rows)
 
   // Determine group_m, group_n, and scale strides from scale shape

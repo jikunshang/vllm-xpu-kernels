@@ -525,7 +525,8 @@ class cp_gather_indexer_k_quant_cache_kernel {
     }
 
     for (size_t iter = 0;
-         iter < (batch_size_ + local_range_y - 1) / local_range_y; ++iter) {
+         iter < (batch_size_ + local_range_y - 1) / local_range_y;
+         ++iter) {
       size_t tid = iter * local_range_y + local_y;
       if (tid < batch_size_) {
         const int seq_start = cu_seq_lens_[tid];
@@ -540,7 +541,8 @@ class cp_gather_indexer_k_quant_cache_kernel {
     item.barrier(sycl::access::fence_space::local_space);
 
     // Exit threads after barrier to make sure nothing to write.
-    if (head_idx >= static_cast<size_t>(head_dim_) || token_idx >= num_tokens_) {
+    if (head_idx >= static_cast<size_t>(head_dim_) ||
+        token_idx >= num_tokens_) {
       return;
     }
 
@@ -1431,7 +1433,7 @@ void indexer_k_quant_and_cache(
               head_dim,                                                 \
               kv_cache.stride(0),                                       \
               kv_cache.size(1),                                         \
-              static_cast<size_t>(block_table.size(1)),                    \
+              static_cast<size_t>(block_table.size(1)),                 \
               num_tokens,                                               \
               quant_block_size));                                       \
     });                                                                 \

@@ -61,8 +61,10 @@ class rms_norm_kernel {
           input + batch_idx * input_stride_d3 + head_idx * input_stride_d2;
     } else if constexpr (NUM_DIMS == 4) {
       // 4D for transformers model_impl qk norm [batch, seq, head, head_dim]
-      size_t batch_idx = item_ct1.get_group(2) / (input_shape_d3 * input_shape_d2);
-      size_t remaining = item_ct1.get_group(2) % (input_shape_d3 * input_shape_d2);
+      size_t batch_idx =
+          item_ct1.get_group(2) / (input_shape_d3 * input_shape_d2);
+      size_t remaining =
+          item_ct1.get_group(2) % (input_shape_d3 * input_shape_d2);
       size_t seq_idx = remaining / input_shape_d2;
       size_t head_idx = remaining % input_shape_d2;
       input_row = input + batch_idx * input_stride_d4 +

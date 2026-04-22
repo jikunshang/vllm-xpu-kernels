@@ -93,7 +93,8 @@ class segmented_max_reduction_strided {
     group_barrier(item.get_group());
 
     // parallel reduction to find row max.
-    for (size_t offset = item.get_local_range(0) / 2; offset > 0; offset >>= 1) {
+    for (size_t offset = item.get_local_range(0) / 2; offset > 0;
+         offset >>= 1) {
       if (tid < offset) {
         cache[tid] = sycl::max(cache[tid], cache[tid + offset]);
       }
