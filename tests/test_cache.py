@@ -112,6 +112,12 @@ MINI_PYTEST_PARAMS = {
     "test_swap_blocks_batch_h2d_mutation_race": {
         "device": ["xpu:0"],
     },
+    "test_gather_and_maybe_dequant_cache_mla": {
+        "block_size": [8],
+        "num_blocks": [8],
+        "batch_size": [8],
+        "max_seq_len": [4],
+    },
 }
 
 
