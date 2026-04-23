@@ -94,12 +94,17 @@ void cutlass_chunk_prefill_impl(
     max_seqlen_q = query.size(2);
     max_seqlen_k = is_paged ? max_seqlen_q : key_cache.size(2);
   }
+
+  bool is_interleaved_kv = false;
+
   if (is_paged) {
     num_blocks = key_cache.size(0);
     block_size = key_cache.size(1);
     num_heads_kv = key_cache.size(2);
     max_blocks_per_seq = block_table.size(1);
     total_seqlen_k = num_blocks * block_size;
+
+    is_interleaved_kv = is_interleaved_kv_cache(key_cache, value_cache);
   }
 
   if (is_local) {
@@ -127,7 +132,7 @@ void cutlass_chunk_prefill_impl(
       max_seqlen_q,
       max_seqlen_k,
       total_seqlen_q,
-      total_seqlen_k,
+      is_interleaved_kv ? total_seqlen_k * 2 : total_seqlen_k,
       is_fp8_kv ? k_scale.value().data_ptr() : nullptr,
       is_fp8_kv ? v_scale.value().data_ptr() : nullptr,
       static_cast<float>(sm_scale),
@@ -144,7 +149,8 @@ void cutlass_chunk_prefill_impl(
       is_paged,   // paged
       is_causal,
       is_local,
-      is_sink};
+      is_sink,
+      is_interleaved_kv};
 
   // Extract Q, K, V, O strides from tensors
   if (is_varlen) {
