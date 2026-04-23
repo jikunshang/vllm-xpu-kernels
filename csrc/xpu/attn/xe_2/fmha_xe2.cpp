@@ -25,7 +25,8 @@ void cutlass_chunk_prefill_xe2(
     bool is_paged,
     bool is_causal,
     bool is_local,
-    bool is_sink) {
+    bool is_sink,
+    std::optional<at::Tensor>& softmax_lse) {
   cutlass_chunk_prefill_impl(
       queue,
       query,
@@ -47,7 +48,8 @@ void cutlass_chunk_prefill_xe2(
       is_paged,
       is_causal,
       is_local,
-      is_sink);
+      is_sink,
+      softmax_lse);
 }
 
 void cutlass_chunk_prefill_impl(
@@ -71,7 +73,8 @@ void cutlass_chunk_prefill_impl(
     bool is_paged,
     bool is_causal,
     bool is_local,
-    bool is_sink) {
+    bool is_sink,
+    std::optional<at::Tensor>& softmax_lse) {
   // general params
   int batch_size, num_heads_q, num_heads_kv, head_size;
   // additional params
@@ -152,6 +155,11 @@ void cutlass_chunk_prefill_impl(
       is_sink,
       is_interleaved_kv};
 
+  // Populate softmax_lse output pointer if requested
+  if (softmax_lse.has_value()) {
+    args.softmax_lse = softmax_lse.value().data_ptr<float>();
+    args.lse_stride = num_heads_q;
+  }
   // Extract Q, K, V, O strides from tensors
   if (is_varlen) {
     // Q/O: [total_seq, num_heads, head_size]
@@ -213,24 +221,33 @@ void cutlass_chunk_prefill_impl(
       "FMHA forward only supports head dimension at most " +
           std::to_string(max_head_size));
 
+  // softmax_lse output is only supported on the
+  // !Paged && !Local && !Sink specialization (template-constrained to
+  // keep kernel instantiation count bounded).
+  bool is_lse = softmax_lse.has_value();
+  TORCH_CHECK(
+      !is_lse || (!is_paged && !is_local && !is_sink),
+      "softmax_lse output is only supported when is_paged=false, "
+      "is_local=false, is_sink=false");
+
   if (args.head_size <= HEAD_SIZE_LIMIT_0) {
     policy_dispatch_func<chunk_policy_head64>(
-        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink);
+        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink, is_lse);
   } else if (args.head_size <= HEAD_SIZE_LIMIT_1) {
     policy_dispatch_func<chunk_policy_head96>(
-        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink);
+        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink, is_lse);
   } else if (args.head_size <= HEAD_SIZE_LIMIT_2) {
     policy_dispatch_func<chunk_policy_head128>(
-        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink);
+        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink, is_lse);
   } else if (args.head_size <= HEAD_SIZE_LIMIT_3) {
     policy_dispatch_func<chunk_policy_head192>(
-        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink);
+        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink, is_lse);
   } else if (args.head_size <= HEAD_SIZE_LIMIT_4) {
     policy_dispatch_func<chunk_policy_head256>(
-        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink);
+        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink, is_lse);
   } else if (args.head_size <= HEAD_SIZE_LIMIT_5) {
     policy_dispatch_func<chunk_policy_head512>(
-        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink);
+        queue, cuQKType, args, is_paged, is_causal, is_local, is_sink, is_lse);
   } else {
     TORCH_CHECK(false, "Unsupported head size for fmha");
   }
